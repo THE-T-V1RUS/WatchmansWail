@@ -1,0 +1,745 @@
+fileFormatVersion: 2
+guid: ebda710a6bf744143873cc2f541cc574
+ModelImporter:
+  serializedVersion: 24200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BasePhare_Circle.001Mat
+    second: {fileID: 2100000, guid: c53e7128c9fc5414f8fc0e1ba0209684, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Breiere.002_Plane.003Mat
+    second: {fileID: 2100000, guid: 95013b16869c56941bb75fa2e8a01bf6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Breiere.003_Plane.008Mat
+    second: {fileID: 2100000, guid: 8209207bfc49b0f419f801a1ce2e0efd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Breiere.004_Plane.011Mat
+    second: {fileID: 2100000, guid: 6b85ac30fe5645b4ba93e49c35adf430, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Breiere.005_Plane.015Mat
+    second: {fileID: 2100000, guid: 666c87f2977c2f048bb01fd721edd2be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Breiere.006_Plane.016Mat
+    second: {fileID: 2100000, guid: 7e995301ffc4f38488175c729205530b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Breiere.007_Plane.017Mat
+    second: {fileID: 2100000, guid: c9ada02fe75ce304382927421b69b45f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Breiere.008_Plane.018Mat
+    second: {fileID: 2100000, guid: 3a55631f2eb4c154d8d5adec21144663, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Breiere.009_Plane.019Mat
+    second: {fileID: 2100000, guid: 004c15030eccebe458db6384af21f213, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Breiere.010_Plane.020Mat
+    second: {fileID: 2100000, guid: ec497fa0f9f9ecd4c9de2a62e74cb00d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Breiere.011_Plane.021Mat
+    second: {fileID: 2100000, guid: eff99f7ecd852d94497f7d9dde3bad8b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Breiere.012_Plane.022Mat
+    second: {fileID: 2100000, guid: 90aa343ac5004ae43a7f23f7686cf30a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Breiere.013_Plane.023Mat
+    second: {fileID: 2100000, guid: e6691acd71a38504aa4d355258a9b20f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Breiere.014_Plane.024Mat
+    second: {fileID: 2100000, guid: 25e414f8b0853df4888dae1ffe39b952, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Breiere.015_Plane.025Mat
+    second: {fileID: 2100000, guid: 0e3c33c373d91104089f28481bfb5198, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Breiere.016_Plane.026Mat
+    second: {fileID: 2100000, guid: 584eff68e976ea04397388d707f294e8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Breiere.017_Plane.027Mat
+    second: {fileID: 2100000, guid: 167d5a338c8faf545891e007d8ec5452, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Breiere.018_Plane.028Mat
+    second: {fileID: 2100000, guid: 2a5fa8a19222c3740900938c373f521b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Breiere.019_Plane.029Mat
+    second: {fileID: 2100000, guid: 22a138e3ae56cfb44bdb25f6aaea99ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Breiere.020_Plane.030Mat
+    second: {fileID: 2100000, guid: 103b5e29d9396be4fb484d71d0c35fbf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Breiere.021_Plane.031Mat
+    second: {fileID: 2100000, guid: 0d7e32f76044d1a4d9f1c53d5d2fad05, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Breiere.022_Plane.032Mat
+    second: {fileID: 2100000, guid: 596a597a4062c5a44bf0315a32fe5e97, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Breiere.023_Plane.033Mat
+    second: {fileID: 2100000, guid: 4f742de918bca1c4abf9b1f6c9c0df49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Breiere.024_Plane.034Mat
+    second: {fileID: 2100000, guid: f7019f0c52aa4774798a505d18aa08ed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Breiere.025_Plane.035Mat
+    second: {fileID: 2100000, guid: d6a00280f5846204993ae75ef049a71a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Breiere.026_Plane.036Mat
+    second: {fileID: 2100000, guid: e6af7cd3972a52a41a33b886d937a3d2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Breiere.027_Plane.037Mat
+    second: {fileID: 2100000, guid: 0ef1a49bc3c900c4b8c4840b7f8e4dce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Breiere.028_Plane.038Mat
+    second: {fileID: 2100000, guid: ad59de7e7fcf64744be330f1491b7deb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Breiere.029_Plane.039Mat
+    second: {fileID: 2100000, guid: c079ae05c168d9d4193f5e827d0cff5a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Breiere.030_Plane.040Mat
+    second: {fileID: 2100000, guid: 1a548353cc706f447a6f88f3944b9d4a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Breiere.031_PlaneMat
+    second: {fileID: 2100000, guid: 98abc58b9ad935b41a26cba3ce95c856, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BreiereL.001_Plane.005Mat
+    second: {fileID: 2100000, guid: 80b809614df90ab4f9237aa20e350830, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BreiereL_Plane.042Mat
+    second: {fileID: 2100000, guid: 7a3c5b549a8988742a388ac9e2b4bfa7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BreiereLaNGLE.001_Plane.006Mat
+    second: {fileID: 2100000, guid: 059879de3899fb04d800af68a4fc1bb1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BreiereLaNGLE.002_Plane.044Mat
+    second: {fileID: 2100000, guid: a6580baf7e395ba448a7792a487b3fff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BreiereLaNGLE.003_Plane.045Mat
+    second: {fileID: 2100000, guid: 303aebce46f7ab148be79a45c16899fb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BreiereLaNGLE.004_Plane.046Mat
+    second: {fileID: 2100000, guid: aa914e0aeb374aa4b9470a9973f94f4b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BreiereLaNGLE.005_Plane.007Mat
+    second: {fileID: 2100000, guid: 137018447e8f166408b009bd02343a72, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BreiereLaNGLE.006_Plane.047Mat
+    second: {fileID: 2100000, guid: 8cda070411f1ae741829887dd9a09591, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BreiereLaNGLE.007_Plane.009Mat
+    second: {fileID: 2100000, guid: 06e82c69bd4fd7140b932bfa545e30b8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BreiereLaNGLE.008_Plane.048Mat
+    second: {fileID: 2100000, guid: 30484185c7674d6428d43bead868d361, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BreiereLaNGLE.009_Plane.049Mat
+    second: {fileID: 2100000, guid: 019e51fedc2c5cd46a801911d093ac1e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BreiereLaNGLE.010_Plane.050Mat
+    second: {fileID: 2100000, guid: 3fcff43785aec86459d9de3b2ea40643, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BreiereLaNGLE.011_Plane.010Mat
+    second: {fileID: 2100000, guid: d82c94295df0adf49b4e410f3204ee26, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BreiereLaNGLE_Plane.043Mat
+    second: {fileID: 2100000, guid: e8e4d2c36c52a3a468c30156a424cef3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BreierePetite.001_Plane.004Mat
+    second: {fileID: 2100000, guid: 9b5310e1e49ff8442a72f0935987a552, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BreierePetite_Plane.041Mat
+    second: {fileID: 2100000, guid: ec724a2e1cfbe4740a8c60a6bcd70d02, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BreiereSmall.001_Plane.012Mat
+    second: {fileID: 2100000, guid: fbd09220db686244c9caf6f06001f226, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BreiereSmall.002_Plane.052Mat
+    second: {fileID: 2100000, guid: 188f9a743b71cdf4584b4fd7005b5b24, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BreiereSmall.003_Plane.013Mat
+    second: {fileID: 2100000, guid: 063456f446621e84db1c01bc1e57f88f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BreiereSmall.004_Plane.053Mat
+    second: {fileID: 2100000, guid: 027d622ef036e374b91e88045b14ae89, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BreiereSmall.005_Plane.014Mat
+    second: {fileID: 2100000, guid: a4206a183e4507e4c9c7ff3a511234b3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BreiereSmall_Plane.051Mat
+    second: {fileID: 2100000, guid: c493747bd03c2944c9ba04e167abb41c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CadrePorte_Cube.006Mat
+    second: {fileID: 2100000, guid: fdebd1c9f69a1814d8fbb96cfdde88c7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cadrefentres.001_Cube.035Mat
+    second: {fileID: 2100000, guid: 4040d76bec9e02b4497bd26beb06b345, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cadrefentres.002_Cube.036Mat
+    second: {fileID: 2100000, guid: 6e4354669cf5edb4c8af8f3787967f4f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cadrefentres.003_Cube.005Mat
+    second: {fileID: 2100000, guid: a506b2b45667c65459b6fca8b277fbff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cadrefentres_Cube.034Mat
+    second: {fileID: 2100000, guid: f787b058d47d874439ca63e182352940, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CorpHare_Circle.002Mat
+    second: {fileID: 2100000, guid: b606a853f2d8cab47a1e7c4a2873457d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Escalier_Plane.002Mat
+    second: {fileID: 2100000, guid: 755e6ac12a5cd31488c5129faa024c6d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: IPN.001_Cube.038Mat
+    second: {fileID: 2100000, guid: 8aa577a29ec57c346b24b70b8817d816, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: IPN.002_Cube.039Mat
+    second: {fileID: 2100000, guid: 8c052fa05e396e448854732a02a4f2dc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: IPN.003_Cube.040Mat
+    second: {fileID: 2100000, guid: 1b2d58b9cedeac74d8fab6c9f343c174, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: IPN.004_Cube.041Mat
+    second: {fileID: 2100000, guid: 23e22763f3b80aa4abe479362acfffc1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: IPN.005_Cube.042Mat
+    second: {fileID: 2100000, guid: 541fc3cf712b95d48bb8907eebef8265, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: IPN.006_Cube.043Mat
+    second: {fileID: 2100000, guid: 6966b462c2e85624fb3c89d85dc9227b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: IPN.007_Cube.044Mat
+    second: {fileID: 2100000, guid: b1f7ba1a58e60bd45aef1bb9c18a6fc3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: IPN.008_Cube.045Mat
+    second: {fileID: 2100000, guid: d46d6cfe71622d948b7ec68af8b8cc2b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: IPN.009_Cube.007Mat
+    second: {fileID: 2100000, guid: 63618521ac5f71644a28603d58824d3f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: IPN_Cube.037Mat
+    second: {fileID: 2100000, guid: 37f1a75e69461684a955d3edda1c94c2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lanterne_Circle.003Mat
+    second: {fileID: 2100000, guid: 4a8bde46553637043ba528e3b01490f9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PilierHaut.001_Cube.024Mat
+    second: {fileID: 2100000, guid: 721d5e24f10c2c54187dc2fc6834b44a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PilierHaut.002_Cube.025Mat
+    second: {fileID: 2100000, guid: 72d4174c50780a84c8327320162b9bec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PilierHaut.003_Cube.026Mat
+    second: {fileID: 2100000, guid: 292e63c1faa733b45831f2fecf9f3ab4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PilierHaut.004_Cube.027Mat
+    second: {fileID: 2100000, guid: 5359ff756cd38da48a0b7c1617c9ac25, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PilierHaut.005_Cube.028Mat
+    second: {fileID: 2100000, guid: f23ea6a28f2cbd54b86d336c943d9275, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PilierHaut.006_Cube.029Mat
+    second: {fileID: 2100000, guid: fbeec5abe6a3d284f9302ffd09bddb71, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PilierHaut.007_Cube.030Mat
+    second: {fileID: 2100000, guid: f54a89b299ba8084788b0b234f51eac2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PilierHaut.008_Cube.031Mat
+    second: {fileID: 2100000, guid: a167951aae387a44b8462084e8099a7b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PilierHaut.009_Cube.032Mat
+    second: {fileID: 2100000, guid: 540284e7c991ef945bfa423a8b024697, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PilierHaut.010_Cube.033Mat
+    second: {fileID: 2100000, guid: d9dbf22126a1a824bb7bb4d1cc4ca518, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PilierHaut.011_Cube.001Mat
+    second: {fileID: 2100000, guid: 0c5292a41808fd849be008ebde080bc4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PilierHaut_Cube.023Mat
+    second: {fileID: 2100000, guid: e48c674716b4b874787aba18dd247fbe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Porte_Plane.001Mat
+    second: {fileID: 2100000, guid: a6090a4199022d145a3e12c575ee80fd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Poteau.001_Circle.006Mat
+    second: {fileID: 2100000, guid: e040e667fcdf43142a7e22440891d2a2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Poteau.002_Circle.007Mat
+    second: {fileID: 2100000, guid: a7dcacd6f98c53a49b9c3a3f4481ff68, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Poteau.003_Circle.008Mat
+    second: {fileID: 2100000, guid: 14ee420e2f195da4a9acb6a783a91b36, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Poteau.004_Circle.009Mat
+    second: {fileID: 2100000, guid: 494c2357df68dac43b4ab3978ef3214c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Poteau.005_Circle.010Mat
+    second: {fileID: 2100000, guid: 57ab07740728a0445925534cb09022cd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Poteau.006_Circle.011Mat
+    second: {fileID: 2100000, guid: 95730453c7ac5f34eb30758d74a2c2e1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Poteau.007_Circle.012Mat
+    second: {fileID: 2100000, guid: 03d81d0a9f8803f469f827ae47c27afe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Poteau.008_Circle.013Mat
+    second: {fileID: 2100000, guid: b1b9e20d5d29fc14bae59ec7e8d1b987, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Poteau.009_Circle.014Mat
+    second: {fileID: 2100000, guid: a4858d3d5bb4bdd48bda0973f2df8ce3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Poteau.010_Circle.015Mat
+    second: {fileID: 2100000, guid: ff09b6832f9cb434183d66fb09e5cd0f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Poteau.011_Circle.016Mat
+    second: {fileID: 2100000, guid: cb0e20d4064581748b24953e28688996, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Poteau.012_Circle.017Mat
+    second: {fileID: 2100000, guid: aca681c81c505d642bf2474a68de7b36, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Poteau.013_Circle.018Mat
+    second: {fileID: 2100000, guid: 7a2b530d63d3dba4faa1429f151ae873, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Poteau.014_Circle.021Mat
+    second: {fileID: 2100000, guid: 783c130f5db5c404da422e60b6224278, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Poteau.015_Circle.019Mat
+    second: {fileID: 2100000, guid: 62bb52a670e11424aa1023dde48a6398, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Poteau.016_Circle.020Mat
+    second: {fileID: 2100000, guid: de63520d37c727b4bb9645934272bc78, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Poteau.017_Circle.022Mat
+    second: {fileID: 2100000, guid: 40cfa200657a5374582fdcf8b843e4f3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Poteau.018_Circle.023Mat
+    second: {fileID: 2100000, guid: d67841f5848ff8f4dbc9d8ae6038f0b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Poteau.019_Circle.024Mat
+    second: {fileID: 2100000, guid: ffb54ba25578a944fac8a4252064639e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Poteau.020_Circle.025Mat
+    second: {fileID: 2100000, guid: f63e45e8b3b39d04193ecf502b49e279, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Poteau.021_Circle.026Mat
+    second: {fileID: 2100000, guid: f7006b3d108fc184b82ff73e64e48d7b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Poteau.022_Circle.027Mat
+    second: {fileID: 2100000, guid: a405e5514636b6f4aa97bdb391f77583, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Poteau.023_Circle.028Mat
+    second: {fileID: 2100000, guid: 9c823070e098afe469ef034c461674bb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Poteau.024_Circle.029Mat
+    second: {fileID: 2100000, guid: 7d6f4ee8086e6754dbeedbc3272ecffa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Poteau.025_Circle.030Mat
+    second: {fileID: 2100000, guid: e5e57e89764848642bf37ccac4d0bce9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Poteau.026_Circle.004Mat
+    second: {fileID: 2100000, guid: 1cb2a018f12207740bce2c559296d5c3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Poteau_Circle.005Mat
+    second: {fileID: 2100000, guid: 750629291507fce4fa071150e90cdc82, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SupHaut.001_Cube.009Mat
+    second: {fileID: 2100000, guid: 6e6a1bb497d35f34a80eb3d5359efbe5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SupHaut.002_Cube.010Mat
+    second: {fileID: 2100000, guid: 4454a7cde35519042932004f1a4e5a21, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SupHaut.003_Cube.011Mat
+    second: {fileID: 2100000, guid: 2faad0a3b3f27d542be443e7facaea3a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SupHaut.004_Cube.012Mat
+    second: {fileID: 2100000, guid: 292e543450b4d3d48967429347521b59, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SupHaut.005_Cube.013Mat
+    second: {fileID: 2100000, guid: a1d63eaa24b49ba48b5f32892d8ec7b5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SupHaut.006_Cube.014Mat
+    second: {fileID: 2100000, guid: 0bf787600449cd34399f16050d1e82d9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SupHaut.007_Cube.015Mat
+    second: {fileID: 2100000, guid: 92aab6e2ad93b9e41a1a6e63405c0bc3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SupHaut.008_Cube.016Mat
+    second: {fileID: 2100000, guid: 08e930712b62ee6438fd51d13eb81add, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SupHaut.009_Cube.017Mat
+    second: {fileID: 2100000, guid: d2fde639ae28c5341bbf5d7bb633eb0f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SupHaut.010_Cube.018Mat
+    second: {fileID: 2100000, guid: f422dba0d105c5f479c6d073bd02ac48, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SupHaut.011_Cube.019Mat
+    second: {fileID: 2100000, guid: 9bf680ba2856aff4cac4a514ee22478f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SupHaut.012_Cube.020Mat
+    second: {fileID: 2100000, guid: 49894e8a545c70b47b3465545f2c61c5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SupHaut.013_Cube.021Mat
+    second: {fileID: 2100000, guid: 838795b1fdd6e4842ada14d4be29f0b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SupHaut.014_Cube.022Mat
+    second: {fileID: 2100000, guid: 0813565ec3e7fc9478ee08987fc000a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SupHaut.015_Cube.002Mat
+    second: {fileID: 2100000, guid: 73f3fb3f11dbf6443a8424867f982f94, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SupHaut_Cube.008Mat
+    second: {fileID: 2100000, guid: 231c1faa6ed393846bf7b273d925e7ac, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
