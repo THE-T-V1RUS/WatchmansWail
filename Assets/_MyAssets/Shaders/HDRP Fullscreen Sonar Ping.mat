@@ -31,11 +31,11 @@ Material:
     - _GlowIntensity: 0.1
     - _GlowWidth: 0.5
     - _Intensity: 0.5
-    - _MaxDepth: 10
+    - _MaxDepth: 10.6
     - _MinDepth: 0
     - _PingCenterX: 0.5
-    - _PingCenterY: 0
-    - _PingElapsedTime: 4.0009294
+    - _PingCenterY: 0.5
+    - _PingElapsedTime: 0.58621264
     - _PingLoopDuration: 4
     - _PingMaxDistance: 2
     - _PingMaxDuration: 3
@@ -45,9 +45,9 @@ Material:
     - _RevealFadeTime: 0.5
     - _RevealLinger: 0.5
     - _RingTrailWidth: 0.01
-    - _RingWidth: 0.15
+    - _RingWidth: 0.141
     - _Saturation: 2
-    - _TransitionWidth: 0.236
+    - _TransitionWidth: 0.386
     - _WaveAmplitude: 0
     - _WaveFrequency: 5
     m_Colors:

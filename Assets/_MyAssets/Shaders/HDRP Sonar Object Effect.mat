@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: HDRP Fullscreen Height From Depth
-  m_Shader: {fileID: 4800000, guid: de8550f3af29de942aa5e3d59d3e32e3, type: 3}
+  m_Name: HDRP Sonar Object Effect
+  m_Shader: {fileID: 4800000, guid: 1e85feee6d37ae24587583d50c0a94df, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -22,23 +22,38 @@ Material:
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs: []
+    m_TexEnvs:
+    - _BaseMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _ColorDif: 0.01
-    - _MaxDepth: 10
-    - _MaxDistance: 200
+    - _ColorDif: 0.1
+    - _GlowIntensity: 1.5
+    - _GlowWidth: 0.2
+    - _Intensity: 1
+    - _MaxDepth: 200
     - _MinDepth: 0
-    - _MinDistance: 0
-    - _RedCurve: 0.1
-    - _RedThreshold: 0.693
-    - _Stop1: 0.45
-    - _Stop2: 0.53
-    - _Stop3: 0.6
-    - _TransitionWidth: 0.236
+    - _PingCenterX: 0.5
+    - _PingCenterY: 0.1
+    - _PingElapsedTime: 2
+    - _PingMaxDuration: 3
+    - _PingSpeed: 1
+    - _RedCurve: 2
+    - _RedThreshold: 0.6
+    - _RevealFadeTime: 1
+    - _RevealLinger: 1
+    - _RingWidth: 0.1
+    - _Saturation: 1.2
+    - _TransitionWidth: 0.8
+    - _WaveAmplitude: 0.05
+    - _WaveFrequency: 5
     m_Colors:
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _GlowColor: {r: 0, g: 0.8, b: 1, a: 1}
     - _HighColor: {r: 1, g: 0, b: 0, a: 1}
-    - _LowColor: {r: 0, g: 0.02830189, b: 0.14150941, a: 1}
+    - _LowColor: {r: 0, g: 0.1, b: 0.45, a: 1}
     - _MidColor1: {r: 0, g: 0.85, b: 0.3, a: 1}
     - _MidColor2: {r: 1, g: 0.9, b: 0.1, a: 1}
     - _MidColor3: {r: 1, g: 0.5, b: 0.05, a: 1}
