@@ -27,7 +27,9 @@ public class TitleScreen : MonoBehaviour
         AudioManager.Instance.FadeAmbientVolume(1, 1);
         player.SetActive(true);
         openingDialogue.TriggerDialogue();
-        titleScreenCamera.SetActive(false); 
+        titleScreenCamera.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false; 
         this.gameObject.SetActive(false);
     }
 
