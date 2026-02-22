@@ -1,8 +1,10 @@
+using StarterAssets;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public GameObject player, titleScreenCamera, titleScreenUI, playerUI;
+    public FirstPersonController playerController;
     public Cinemachine.CinemachineBrain cinemachineBrain;
     public bool isDebugMode = false;
 
@@ -30,6 +32,17 @@ public class GameManager : MonoBehaviour
             titleScreenUI.SetActive(true);
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.Confined;
+        }
+        else
+        {
+            player.SetActive(true);
+            playerUI.SetActive(true);
+            titleScreenCamera.SetActive(false);
+            titleScreenUI.SetActive(false);
+            playerController.canLook = true;
+            playerController.canMove = true;
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 
