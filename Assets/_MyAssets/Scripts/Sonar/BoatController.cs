@@ -5,6 +5,7 @@ public class BoatController : MonoBehaviour
 {
     [Header("Movement")]
     [SerializeField] private float driftSpeed = 5f;
+    [SerializeField] private bool driftForwardEnabled = false;
 
     [Header("Steering")]
     [SerializeField] private float maxTurnRate = 60f; // degrees per second
@@ -56,9 +57,9 @@ public class BoatController : MonoBehaviour
     private float currentSpeed = 0f;
     private float currentHealth;
     private Rigidbody rb;
-    
-    // Public distance property for UI access
+
     public float DistanceToSafeZone { get; private set; }
+    public bool IsDriftForwardEnabled => driftForwardEnabled;
     private bool isDead = false;
     private float fadeTimer = 0f;
     private float cameraXVelocity = 0f;
@@ -171,6 +172,12 @@ public class BoatController : MonoBehaviour
 
     private void ReadSteeringInput()
     {
+        if (!driftForwardEnabled)
+        {
+            steeringInput = 0f;
+            return;
+        }
+
         float steerInput = 0f;
 
         if (Keyboard.current.leftArrowKey.isPressed)
@@ -187,6 +194,13 @@ public class BoatController : MonoBehaviour
 
     private void ApplySteering(float deltaTime)
     {
+        if (!driftForwardEnabled)
+        {
+            steeringInput = 0f;
+            currentTurnRate = 0f;
+            return;
+        }
+
         float targetTurnRate = steeringInput * maxTurnRate;
         if (minTurnRadius > 0.01f && currentSpeed > 0.01f)
         {
@@ -208,6 +222,18 @@ public class BoatController : MonoBehaviour
             {
                 rb.linearVelocity = Vector3.zero;
             }
+            return;
+        }
+
+        if (!driftForwardEnabled)
+        {
+            currentSpeed = 0f;
+
+            if (usePhysics && rb != null)
+            {
+                rb.linearVelocity = Vector3.zero;
+            }
+
             return;
         }
 
@@ -312,6 +338,34 @@ public class BoatController : MonoBehaviour
         followCamera.position = camPos;
     }
 
+    public void SetDriftForwardEnabled(bool enabled)
+    {
+        driftForwardEnabled = enabled;
+
+        if (!driftForwardEnabled)
+        {
+            steeringInput = 0f;
+            currentTurnRate = 0f;
+            currentSpeed = 0f;
+
+            if (usePhysics && rb != null)
+            {
+                rb.linearVelocity = Vector3.zero;
+                rb.angularVelocity = Vector3.zero;
+            }
+        }
+    }
+
+    public void EnableDriftForward()
+    {
+        SetDriftForwardEnabled(true);
+    }
+
+    public void DisableDriftForward()
+    {
+        SetDriftForwardEnabled(false);
+    }
+
     private void UpdateDistanceToSafeZone()
     {
         float currentZ = rb != null ? rb.position.z : transform.position.z;
@@ -327,6 +381,7 @@ public class BoatController : MonoBehaviour
         currentTurnRate = 0f;
         steeringInput = 0f;
         currentSpeed = 0f;
+        driftForwardEnabled = false;
 
         transform.position = initialPosition;
         transform.rotation = initialRotation;
