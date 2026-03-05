@@ -35,7 +35,7 @@ Material:
     - _MinDepth: 0
     - _PingCenterX: 0.5
     - _PingCenterY: 0
-    - _PingElapsedTime: 3.1949918
+    - _PingElapsedTime: 4
     - _PingLoopDuration: 4
     - _PingMaxDistance: 2
     - _PingMaxDuration: 3
