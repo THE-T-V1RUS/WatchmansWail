@@ -8,6 +8,9 @@ using UnityEngine.InputSystem;
 
 public class InteractionController : MonoBehaviour
 {
+    public event System.Action<Interactable> OnInteractableEncountered;
+    public event System.Action OnInteractionTriggered;
+
     [Header("Interaction")]
     [Tooltip("Maximum distance to check for interactables")]
     public float MaxDistance = 3.0f;
@@ -27,6 +30,7 @@ public class InteractionController : MonoBehaviour
 #endif
 
     private StarterAssetsInputs _input;
+    private Interactable _lastEncounteredInteractable;
 
     void Start()
     {
@@ -74,6 +78,7 @@ public class InteractionController : MonoBehaviour
             crosshairImg.sprite = normalCrosshair;
             CurrentInteractable = null;
             CurrentInteractableComponent = null;
+            _lastEncounteredInteractable = null;
             if (interactTextLabel != null)
             {
                 interactTextLabel.text = string.Empty;
@@ -84,6 +89,7 @@ public class InteractionController : MonoBehaviour
         crosshairImg.sprite = normalCrosshair;
         CurrentInteractable = null;
         CurrentInteractableComponent = null;
+        Interactable encounteredThisFrame = null;
         bool interactPressed = false;
     #if ENABLE_INPUT_SYSTEM
         if (interactAction != null && interactAction.action != null)
@@ -115,6 +121,7 @@ public class InteractionController : MonoBehaviour
                 CurrentInteractableComponent = hit.collider.GetComponent<Interactable>();
                 if (CurrentInteractableComponent != null)
                 {
+                    encounteredThisFrame = CurrentInteractableComponent;
                     crosshairImg.sprite = interactCrosshair;
                     if (interactTextLabel != null)
                     {
@@ -123,9 +130,20 @@ public class InteractionController : MonoBehaviour
                     if (interactPressed)
                     {
                         CurrentInteractableComponent.Interact();
+                        OnInteractionTriggered?.Invoke();
                     }
                 }
             }
+        }
+
+        if (encounteredThisFrame != null && encounteredThisFrame != _lastEncounteredInteractable)
+        {
+            _lastEncounteredInteractable = encounteredThisFrame;
+            OnInteractableEncountered?.Invoke(encounteredThisFrame);
+        }
+        else if (encounteredThisFrame == null)
+        {
+            _lastEncounteredInteractable = null;
         }
     }
 }

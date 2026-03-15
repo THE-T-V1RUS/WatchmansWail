@@ -16,6 +16,7 @@ public class DialogueManager : MonoBehaviour
     public float fadeDuration = 0.2f;
     public float revealInterval = 0.02f;
     public bool IsDialogueActive => _isDialogueActive;
+    [SerializeField] GameObject dialogueArrow;
 
     [SerializeField] bool isDebugMode = false;
 
@@ -133,6 +134,7 @@ public class DialogueManager : MonoBehaviour
         _skipReveal = false;
         _advanceRequested = false;
         _waitingForEvent = false;
+        SetDialogueArrowVisible(false);
 
         if (dialogueCanvasGroup != null)
         {
@@ -165,6 +167,7 @@ public class DialogueManager : MonoBehaviour
         _advanceRequested = false;
         _waitingForEvent = false;
         _skipReveal = false;
+        SetDialogueArrowVisible(false);
 
         SetPlayerLock(_lockPlayer);
 
@@ -203,14 +206,19 @@ public class DialogueManager : MonoBehaviour
                         yield return FadeCanvas(1.0f, fadeDuration);
                     }
 
-                    foreach (string textLine in step.textLines)
+                    for (int lineIndex = 0; lineIndex < step.textLines.Count; lineIndex++)
                     {
+                        string textLine = step.textLines[lineIndex];
                         string text = textLine ?? string.Empty;
+                        SetDialogueArrowVisible(false);
                         _revealRoutine = StartCoroutine(RevealText(text));
                         while (_isRevealing)
                         {
                             yield return null;
                         }
+
+                        bool isLastDialogueLine = IsLastDialogueLine(_currentIndex, step, lineIndex);
+                        SetDialogueArrowVisible(!isLastDialogueLine);
 
                         _advanceRequested = false;
                         while (!_advanceRequested)
@@ -222,6 +230,7 @@ public class DialogueManager : MonoBehaviour
                     // Fade out dialogue canvas after text step is complete
                     if (dialogueCanvasGroup != null)
                     {
+                        SetDialogueArrowVisible(false);
                         yield return FadeCanvas(0.0f, fadeDuration);
                         // Clear text after fading out
                         if (dialogueTMP != null)
@@ -254,6 +263,7 @@ public class DialogueManager : MonoBehaviour
             dialogueCanvasGroup.blocksRaycasts = false;
             dialogueCanvasGroup.interactable = false;
         }
+        SetDialogueArrowVisible(false);
 
         // Fade out cutscene canvas and fade in player UI at the end
         if (cutsceneCanvasGroup != null)
@@ -323,7 +333,43 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
+        SetDialogueArrowVisible(false);
         _advanceRequested = true;
+    }
+
+    private bool IsLastDialogueLine(int stepIndex, DialogueStep currentStep, int lineIndex)
+    {
+        if (_currentDialogue == null || _currentDialogue.steps == null)
+        {
+            return true;
+        }
+
+        if (currentStep != null && currentStep.textLines != null)
+        {
+            if (lineIndex >= 0 && lineIndex < currentStep.textLines.Count - 1)
+            {
+                return false;
+            }
+        }
+
+        for (int i = stepIndex + 1; i < _currentDialogue.steps.Count; i++)
+        {
+            DialogueStep nextStep = _currentDialogue.steps[i];
+            if (nextStep != null && nextStep.stepType == DialogueStepType.Text && nextStep.textLines != null && nextStep.textLines.Count > 0)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    private void SetDialogueArrowVisible(bool visible)
+    {
+        if (dialogueArrow != null)
+        {
+            dialogueArrow.SetActive(visible);
+        }
     }
 
     private bool WasAdvancePressed()
