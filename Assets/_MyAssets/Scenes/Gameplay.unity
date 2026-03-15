@@ -7624,13 +7624,15 @@ MonoBehaviour:
         m_Calls: []
     waitForEventComplete: 0
     waitDuration: 4
-  - isExpanded: 0
+  - isExpanded: 1
     stepName: Dialogue before falling asleep
     stepType: 0
     textLines:
-    - <i>That crate won't stay empty for long.
-    - "<i>I\u2019ll hear a ship\u2019s horn soon."
-    - <i>I just need to sleep so I have the strength to play.
+    - Maybe I made a mistake?
+    - No...
+    - A change of course doesn't make sense either.
+    - I'm just being impatient.
+    - They will come and I will guide them.
     onEvent:
       m_PersistentCalls:
         m_Calls: []
@@ -13881,12 +13883,9 @@ MonoBehaviour:
     stepName: Step
     stepType: 0
     textLines:
-    - <i>I don't think I've <b>ever</b> been this hungry.
-    - <i>Three days without a meal.
-    - <i>Even the rain barrels are almost empty.
-    - <i>I'm sure I'll hear another foghorn soon.
-    - <i>One blast from the ocean, and I'll know a ship is there.
-    - "<i>I\u2019ll have more supplies soon. I just have to be patient."
+    - Come on. Where is it?
+    - It should've been here days ago.
+    - What's taking so long?
     onEvent:
       m_PersistentCalls:
         m_Calls: []
@@ -13926,9 +13925,9 @@ MonoBehaviour:
     stepName: Step
     stepType: 0
     textLines:
-    - <i>I need to get some rest.
-    - "<i>I\u2019ll wake up the second I hear a ship in the distance."
-    - <i>I have to.
+    - I can get some sleep. I'm not going to miss it.l
+    - I'll wake up when it gets here.
+    - I have to.
     onEvent:
       m_PersistentCalls:
         m_Calls: []
