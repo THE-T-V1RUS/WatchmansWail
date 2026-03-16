@@ -33,6 +33,21 @@ public class AudioManager : MonoBehaviour
         PlaySfx(clip, 1.0f);
     }
 
+    public void PlaySfxWaitForComplete(AudioClip clip)
+    {
+        if (clip != null)
+        {
+            StartCoroutine(PlaySfxAndSignalComplete(clip));
+        }
+    }
+
+    private IEnumerator PlaySfxAndSignalComplete(AudioClip clip)
+    {
+        PlaySfx(clip, 1.0f);
+        yield return new WaitForSeconds(clip.length);
+        DialogueManager.Instance.CompleteDialogueEvent();
+    }
+
     public void SetAmbientVolume(float volume)
     {
         if (ambientSource != null)
@@ -47,6 +62,16 @@ public class AudioManager : MonoBehaviour
         {
             StartCoroutine(FadeVolumeCoroutine(ambientSource, targetVolume, duration));
         }
+    }
+
+    public void FadeInAmbientVolume(float duration)
+    {
+        FadeAmbientVolume(1.0f, duration);
+    }
+
+    public void FadeOutAmbientVolume(float duration)
+    {
+        FadeAmbientVolume(0.0f, duration);
     }
 
     public void FadeAmbientVolumeSimple(float targetVolume)
