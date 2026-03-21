@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class SonarMinigameController : MonoBehaviour
@@ -27,11 +28,15 @@ public class SonarMinigameController : MonoBehaviour
     private bool previousScreenOnState;
     private bool previousSonarPingEnabledState;
 
+    public bool isReadyForInput = false;
+
+    [SerializeField] private GameObject sonarScreen, boatScreen;
+
     private void Awake()
     {
         ApplyRuntimeMaterialCopies();
         previousScreenOnState = isScreenOn;
-        previousScreenOnState = isSonarPingEnabled;
+        previousSonarPingEnabledState = isSonarPingEnabled;
         if (sonarPingController != null)
         {
             sonarPingController.PingEnabled = isSonarPingEnabled;
@@ -215,5 +220,17 @@ public class SonarMinigameController : MonoBehaviour
         }
 
         Debug.LogWarning($"SonarMinigameController: Could not set '{UnlitColorProperty}' for material '{material.name}' on shader '{material.shader.name}'.");
+    }
+
+    public bool MonitorIsActive()
+    {
+        return isScreenOn;
+    }
+
+    public void ToggleInputReady(bool value)
+    {
+        isReadyForInput = value;
+        sonarScreen.SetActive(value);
+        boatScreen.SetActive(value);
     }
 }

@@ -13,4 +13,9 @@ public class Interactable : MonoBehaviour
     {
         onInteract?.Invoke();
     }
+
+    public void SetInteractText(string newText)
+    {
+        interactText = newText;
+    }
 }

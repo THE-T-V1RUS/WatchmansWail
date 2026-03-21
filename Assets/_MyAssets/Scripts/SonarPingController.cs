@@ -14,6 +14,7 @@ public class SonarPingController : MonoBehaviour
     [SerializeField] private float pingMaxDuration = 3.0f;
     [SerializeField] private bool autoRepeatPing = false;
     [SerializeField] private float timeBetweenPings = 3.0f;
+    [SerializeField] private SonarMinigameController sonarMinigameController;
     
     [Header("Events")]
     [SerializeField] private UnityEvent onPingTriggered = new UnityEvent();
@@ -73,7 +74,7 @@ public class SonarPingController : MonoBehaviour
         }
         
         // Only start new auto-repeat pings if ping is enabled
-        if (pingEnabled && autoRepeatPing && !isPingActive)
+        if (pingEnabled && sonarMinigameController.isReadyForInput && autoRepeatPing && !isPingActive)
         {
             timeSinceLastPing += Time.deltaTime;
             if (timeSinceLastPing >= timeBetweenPings)
