@@ -11,6 +11,8 @@ public class WalkIntoLighthouse : MonoBehaviour
     [SerializeField] Transform lighthouseInteriorSpawnPoint;
 
     [SerializeField] CanvasGroup faderCanvasGroup;
+    [SerializeField] GameObject flashlightObject;
+    [SerializeField] bool flashliightEnabledState = false;
 
     public float fadeDuration = 1.0f;
     public float newAmbientVolume = 0.01f;
@@ -69,7 +71,7 @@ public class WalkIntoLighthouse : MonoBehaviour
 
         controller.canLook = true;
         controller.canMove = true;
-
+        flashlightObject.SetActive(flashliightEnabledState);
         // Fade back in by turning canvas group alpha to 0
         timer = 0.0f;
         while (timer < fadeDuration)

@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using StarterAssets;
+using System;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
 #endif
@@ -119,18 +120,46 @@ public class InteractionController : MonoBehaviour
             {
                 CurrentInteractable = hit.collider.gameObject;
                 CurrentInteractableComponent = hit.collider.GetComponent<Interactable>();
-                if (CurrentInteractableComponent != null)
+                if (CurrentInteractableComponent != null && CurrentInteractableComponent.isActiveAndEnabled)
                 {
                     encounteredThisFrame = CurrentInteractableComponent;
                     crosshairImg.sprite = interactCrosshair;
                     if (interactTextLabel != null)
                     {
-                        interactTextLabel.text = CurrentInteractableComponent.interactText;
+                        try
+                        {
+                            interactTextLabel.text = CurrentInteractableComponent.interactText;
+                        }
+                        catch (MissingReferenceException)
+                        {
+                            CurrentInteractable = null;
+                            CurrentInteractableComponent = null;
+                            interactTextLabel.text = string.Empty;
+                            return;
+                        }
                     }
                     if (interactPressed)
                     {
-                        CurrentInteractableComponent.Interact();
-                        OnInteractionTriggered?.Invoke();
+                        try
+                        {
+                            CurrentInteractableComponent.Interact();
+                        }
+                        catch (MissingReferenceException ex)
+                        {
+                            Debug.LogWarning($"InteractionController: Interactable was destroyed during interaction. {ex.Message}", this);
+                            CurrentInteractable = null;
+                            CurrentInteractableComponent = null;
+                            return;
+                        }
+
+                        try
+                        {
+                            OnInteractionTriggered?.Invoke();
+                        }
+                        catch (MissingReferenceException ex)
+                        {
+                            Debug.LogWarning($"InteractionController: A listener on OnInteractionTriggered referenced a destroyed object. Owner='{name}'. {ex.Message}", this);
+                        }
                     }
                 }
             }
@@ -139,7 +168,14 @@ public class InteractionController : MonoBehaviour
         if (encounteredThisFrame != null && encounteredThisFrame != _lastEncounteredInteractable)
         {
             _lastEncounteredInteractable = encounteredThisFrame;
-            OnInteractableEncountered?.Invoke(encounteredThisFrame);
+            try
+            {
+                OnInteractableEncountered?.Invoke(encounteredThisFrame);
+            }
+            catch (MissingReferenceException ex)
+            {
+                Debug.LogWarning($"InteractionController: A listener on OnInteractableEncountered referenced a destroyed object. {ex.Message}", this);
+            }
         }
         else if (encounteredThisFrame == null)
         {

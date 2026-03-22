@@ -10,24 +10,46 @@ public class MonitorButton : MonoBehaviour
     public SonarPingController sonarPingController;
     public BoxCollider interactionCollider;
 
+    private void Awake()
+    {
+        if (buttonInteractable == null)
+        {
+            buttonInteractable = GetComponent<Interactable>();
+        }
+    }
+
     public void ButtonPressed()
     {
         if (minigameController != null && buttonInteractable != null)
         {
             AudioManager.Instance.PlaySfxSimple(buttonPressSound);
-            buttonAnimator.SetTrigger("Press");
-            interactionCollider.enabled = false;
+            if (buttonAnimator != null)
+            {
+                buttonAnimator.SetTrigger("Press");
+            }
+
+            if (interactionCollider != null)
+            {
+                interactionCollider.enabled = false;
+            }
+
             StartCoroutine(reenableColliderAfterDelay(0.5f));
 
             if (minigameController.MonitorIsActive())
             {
                 minigameController.SetScreenOn(false);
-                buttonInteractable.SetInteractText("Turn Monitor On");
+                if (buttonInteractable != null)
+                {
+                    buttonInteractable.SetInteractText("Turn Monitor On");
+                }
             }
             else
             {
                 minigameController.SetScreenOn(true);
-                buttonInteractable.SetInteractText("Turn Monitor Off");
+                if (buttonInteractable != null)
+                {
+                    buttonInteractable.SetInteractText("Turn Monitor Off");
+                }
             }
         }
         else
@@ -41,19 +63,33 @@ public class MonitorButton : MonoBehaviour
         if (sonarPingController != null && buttonInteractable != null)
         {
             AudioManager.Instance.PlaySfxSimple(buttonPressSound);
-            buttonAnimator.SetBool("Switch", !buttonAnimator.GetBool("Switch"));
-            interactionCollider.enabled = false;
+            if (buttonAnimator != null)
+            {
+                buttonAnimator.SetBool("Switch", !buttonAnimator.GetBool("Switch"));
+            }
+
+            if (interactionCollider != null)
+            {
+                interactionCollider.enabled = false;
+            }
+
             StartCoroutine(reenableColliderAfterDelay(0.5f));
 
             if (sonarPingController.PingEnabled)
             {
                 sonarPingController.PingEnabled = false;
-                buttonInteractable.SetInteractText("Enable Sonar");
+                if (buttonInteractable != null)
+                {
+                    buttonInteractable.SetInteractText("Enable Sonar");
+                }
             }
             else
             {
                 sonarPingController.PingEnabled = true;
-                buttonInteractable.SetInteractText("Disable Sonar");
+                if (buttonInteractable != null)
+                {
+                    buttonInteractable.SetInteractText("Disable Sonar");
+                }
             }
         }
         else
@@ -62,9 +98,24 @@ public class MonitorButton : MonoBehaviour
         }
     }
 
+#if UNITY_EDITOR
+    private void OnDestroy()
+    {
+        // Prevent Inspector MissingReferenceException by clearing selection
+        // before the editor tries to redraw a destroyed component header.
+        if (UnityEditor.Selection.activeGameObject == gameObject)
+        {
+            UnityEditor.Selection.activeGameObject = null;
+        }
+    }
+#endif
+
     IEnumerator reenableColliderAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        interactionCollider.enabled = true;
-    }   
+        if (this != null && interactionCollider != null)
+        {
+            interactionCollider.enabled = true;
+        }
+    }
 }

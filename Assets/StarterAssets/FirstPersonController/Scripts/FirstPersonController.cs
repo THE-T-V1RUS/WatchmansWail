@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Cinemachine;
+using UnityEngine;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
 #endif
@@ -26,15 +27,8 @@ namespace StarterAssets
 		public bool canMove = true;
 		[Tooltip("Whether the player can jump")]
 		public bool canJump = true;
-		[Tooltip("Target to force the player to look at")]
-		public Transform ForceLookTarget;
-		[Tooltip("Whether forced look is enabled")]
-		public bool isForceLooking = false;
-		[Tooltip("Speed for forced look rotation")]
-		public float forceLookSpeed = 5.0f;
-		[Tooltip("Yaw angle (degrees) before pitch starts moving toward the target")]
-		public float forceLookPitchStartAngle = 60.0f;
 		public CharacterController characterController;
+		[SerializeField] private CameraMover cameraMover;
 
 		[Header("Footsteps")]
 		[Tooltip("Audio source used to play footstep sounds")]
@@ -150,6 +144,83 @@ namespace StarterAssets
 			// reset our timeouts on start
 			_jumpTimeoutDelta = JumpTimeout;
 			_fallTimeoutDelta = FallTimeout;
+
+			if (cameraMover != null)
+			{
+				cameraMover.OnReturnedToPlayer += OnCameraReturnedToPlayer;
+				cameraMover.OnArrivedAtDestination += OnCameraArrivedAtDestination;
+				cameraMover.OnForceLookComplete += OnForceLookComplete;
+			}
+		}
+
+		private void OnDestroy()
+		{
+			if (cameraMover != null)
+			{
+				cameraMover.OnReturnedToPlayer -= OnCameraReturnedToPlayer;
+				cameraMover.OnArrivedAtDestination -= OnCameraArrivedAtDestination;
+				cameraMover.OnForceLookComplete -= OnForceLookComplete;
+			}
+		}
+
+		/// <summary>
+		/// Re-sync internal yaw/pitch from the camera target so there's no snap
+		/// when mouse look resumes after CameraMover returns.
+		/// </summary>
+		private void SyncCameraAngles()
+		{
+			if (CinemachineCameraTarget != null)
+			{
+				_cinemachineTargetPitch = CinemachineCameraTarget.transform.localEulerAngles.x;
+				if (_cinemachineTargetPitch > 180f)
+				{
+					_cinemachineTargetPitch -= 360f;
+				}
+			}
+		}
+
+		private void OnForceLookComplete()
+		{
+			SyncCameraAngles();
+		}
+
+		private void OnCameraArrivedAtDestination()
+		{
+			canMove = false;
+			SetCinemachineNoise(false);
+		}
+
+		private void OnCameraReturnedToPlayer()
+		{
+			SyncCameraAngles();
+			canMove = true;
+			SetCinemachineNoise(true);
+		}
+
+		private void SetCinemachineNoise(bool enabled)
+		{
+			if (_mainCamera == null)
+			{
+				return;
+			}
+
+			var brain = _mainCamera.GetComponent<CinemachineBrain>();
+			if (brain == null || brain.ActiveVirtualCamera == null)
+			{
+				return;
+			}
+
+			var vcam = brain.ActiveVirtualCamera as CinemachineVirtualCamera;
+			if (vcam == null)
+			{
+				return;
+			}
+
+			var noise = vcam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+			if (noise != null)
+			{
+				noise.enabled = enabled;
+			}
 		}
 
 		private void Update()
@@ -174,9 +245,8 @@ namespace StarterAssets
 
 		private void CameraRotation()
 		{
-			if (isForceLooking && ForceLookTarget != null)
+			if (cameraMover != null && (cameraMover.IsActive || cameraMover.IsForceLooking))
 			{
-				ForceLookAtTarget();
 				return;
 			}
 
@@ -202,42 +272,6 @@ namespace StarterAssets
 
 				// rotate the player left and right
 				transform.Rotate(Vector3.up * _rotationVelocity);
-			}
-		}
-
-		private void ForceLookAtTarget()
-		{
-			Vector3 origin = CinemachineCameraTarget != null
-				? CinemachineCameraTarget.transform.position
-				: transform.position;
-			Vector3 direction = ForceLookTarget.position - origin;
-			if (direction.sqrMagnitude < 0.0001f)
-			{
-				return;
-			}
-
-			float currentYaw = transform.eulerAngles.y;
-			float desiredYaw = currentYaw;
-			Vector3 planarDirection = new Vector3(direction.x, 0.0f, direction.z);
-			if (planarDirection.sqrMagnitude > 0.0001f)
-			{
-				Quaternion targetYaw = Quaternion.LookRotation(planarDirection.normalized, Vector3.up);
-				desiredYaw = targetYaw.eulerAngles.y;
-				transform.rotation = Quaternion.Slerp(transform.rotation, targetYaw, forceLookSpeed * Time.deltaTime);
-			}
-
-			Vector3 localDirection = transform.InverseTransformDirection(direction.normalized);
-			float targetPitch = -Mathf.Atan2(localDirection.y, localDirection.z) * Mathf.Rad2Deg;
-			targetPitch = ClampAngle(targetPitch, BottomClamp, TopClamp);
-			float yawDelta = Mathf.Abs(Mathf.DeltaAngle(currentYaw, desiredYaw));
-			float pitchBlend = Mathf.InverseLerp(forceLookPitchStartAngle, 0.0f, yawDelta);
-			_cinemachineTargetPitch = Mathf.LerpAngle(
-				_cinemachineTargetPitch,
-				targetPitch,
-				forceLookSpeed * pitchBlend * Time.deltaTime);
-			if (CinemachineCameraTarget != null)
-			{
-				CinemachineCameraTarget.transform.localRotation = Quaternion.Euler(_cinemachineTargetPitch, 0.0f, 0.0f);
 			}
 		}
 
@@ -437,12 +471,25 @@ namespace StarterAssets
 
 		public void setForceLookTarget(Transform target)
 		{
-			ForceLookTarget = target;
+			if (cameraMover != null)
+			{
+				cameraMover.SetForceLookTarget(target);
+			}
 		}
 
 		public void enableForceLook(bool enable)
 		{
-			isForceLooking = enable;
+			if (cameraMover != null)
+			{
+				if (enable)
+				{
+					cameraMover.SetForceLookTarget(cameraMover.ForceLookTarget);
+				}
+				else
+				{
+					cameraMover.DisableForceLook();
+				}
+			}
 		}
 
 		public void toggleMovement(bool enable)
@@ -461,6 +508,14 @@ namespace StarterAssets
 			transform.position = target.position;
 			transform.rotation = target.rotation;
 			characterController.enabled = true;
+		}
+
+		public void setCameraFollowTarget(Transform target)
+		{
+			if (cameraMover != null)
+			{
+				cameraMover.setFollowTarget(target);
+			}
 		}
 	}
 }

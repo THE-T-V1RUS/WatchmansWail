@@ -473,7 +473,7 @@ public class DialogueManager : MonoBehaviour
         
         if (!locked)
         {
-            playerController.isForceLooking = false;
+            playerController.enableForceLook(false);
         }
     }
     

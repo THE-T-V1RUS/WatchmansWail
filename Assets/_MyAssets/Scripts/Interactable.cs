@@ -11,8 +11,32 @@ public class Interactable : MonoBehaviour
 
     public void Interact()
     {
-        onInteract?.Invoke();
+        if (onInteract == null)
+        {
+            return;
+        }
+
+        try
+        {
+            onInteract.Invoke();
+        }
+        catch (MissingReferenceException ex)
+        {
+            Debug.LogWarning($"Interactable '{name}' has a destroyed listener target: {ex.Message}", this);
+        }
     }
+
+#if UNITY_EDITOR
+    private void OnDestroy()
+    {
+        // Prevent Inspector MissingReferenceException by clearing selection
+        // before the editor tries to redraw a destroyed component header.
+        if (UnityEditor.Selection.activeGameObject == gameObject)
+        {
+            UnityEditor.Selection.activeGameObject = null;
+        }
+    }
+#endif
 
     public void SetInteractText(string newText)
     {

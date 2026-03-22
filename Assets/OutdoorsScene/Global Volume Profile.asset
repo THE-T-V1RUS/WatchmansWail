@@ -1,5 +1,81 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6349583432894581013
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 192242148e8b54943ad86c1a7b6b1070, type: 3}
+  m_Name: Pixelate
+  m_EditorClassIdentifier: Assembly-CSharp::Pixelate
+  active: 1
+  pixelWidth:
+    m_OverrideState: 1
+    m_Value: 768
+  pixelHeight:
+    m_OverrideState: 1
+    m_Value: 432
+  colorDepth:
+    m_OverrideState: 1
+    m_Value: 128
+  ditherStrength:
+    m_OverrideState: 1
+    m_Value: 0.4
+  ditherScale:
+    m_OverrideState: 1
+    m_Value: 1.5
+  scanlineIntensity:
+    m_OverrideState: 0
+    m_Value: 0
+  scanlineWidth:
+    m_OverrideState: 0
+    m_Value: 1
+  curvatureStrength:
+    m_OverrideState: 0
+    m_Value: 0
+  vignetteStrength:
+    m_OverrideState: 1
+    m_Value: 0.399
+  noiseStrength:
+    m_OverrideState: 1
+    m_Value: 0.005
+  chromaStrength:
+    m_OverrideState: 1
+    m_Value: 0
+  bloomBleedStrength:
+    m_OverrideState: 0
+    m_Value: 2
+  bloomBleedSamples:
+    m_OverrideState: 0
+    m_Value: 3
+  colorTint:
+    m_OverrideState: 0
+    m_Value: {r: 1, g: 0, b: 0, a: 1}
+  tintStrength:
+    m_OverrideState: 0
+    m_Value: 1
+  contrast:
+    m_OverrideState: 0
+    m_Value: 1
+  brightness:
+    m_OverrideState: 0
+    m_Value: 0
+  interlaceStrength:
+    m_OverrideState: 0
+    m_Value: 0
+  hJitterStrength:
+    m_OverrideState: 1
+    m_Value: 0
+  colorBleedStrength:
+    m_OverrideState: 0
+    m_Value: 0
+  colorBleedSamples:
+    m_OverrideState: 0
+    m_Value: 1
 --- !u!114 &-4946512622833795189
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -542,6 +618,7 @@ MonoBehaviour:
   - {fileID: -3266409063069510260}
   - {fileID: -1993908493936859964}
   - {fileID: 6735555757484909084}
+  - {fileID: -6349583432894581013}
 --- !u!114 &2947565829500407133
 MonoBehaviour:
   m_ObjectHideFlags: 3
