@@ -102,4 +102,29 @@ public class AudioManager : MonoBehaviour
             ambientSource.Play();
         }
     }
+
+    public void ChangeMusicClip(AudioClip newClip)
+    {
+        if (musicSource != null)
+        {
+            musicSource.clip = newClip;
+        }
+    }
+
+    public void FadeInMusic(float duration)
+    {
+        if (musicSource != null)
+        {
+            musicSource.Play();
+            StartCoroutine(FadeVolumeCoroutine(musicSource, 1.0f, duration));
+        }
+    }
+
+    public void FadeOutMusic(float duration)
+    {
+        if (musicSource != null)
+        {
+            StartCoroutine(FadeVolumeCoroutine(musicSource, 0.0f, duration));
+        }
+    }
 }

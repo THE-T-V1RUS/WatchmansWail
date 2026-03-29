@@ -1434,6 +1434,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cd9f059171d70e54d9346a931d599378, type: 3}
   m_PrefabInstance: {fileID: 69188347}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &72906283
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 72906284}
+  m_Layer: 0
+  m_Name: MonitorCamera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &72906284
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72906283}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.020593435, z: -0, w: 0.999788}
+  m_LocalPosition: {x: -1.0131556, y: 8.394581, z: 1.5662371}
+  m_LocalScale: {x: 1.0087423, y: 0.61857814, z: 0.24869}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 509745564}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &75452968
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2360,6 +2391,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 471f9c92a1b9bb048a40adaf147aac8d, type: 3}
   - {fileID: 8300000, guid: b02b3f57c1644a04aa1acc4d499f3944, type: 3}
   - {fileID: 8300000, guid: 7cf32e525f7a88a4c9baad527ae6f975, type: 3}
+  settleSpeed: 3
 --- !u!1001 &118472589
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6655,6 +6687,64 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 361713479}
   m_Mesh: {fileID: -8225274179381050370, guid: ebda710a6bf744143873cc2f541cc574, type: 3}
+--- !u!1 &367533053
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 367533054}
+  - component: {fileID: 367533056}
+  - component: {fileID: 367533055}
+  m_Layer: 5
+  m_Name: Tutorial - BoatMovement
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &367533054
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367533053}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1742113597}
+  m_Father: {fileID: 1860214911}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &367533055
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367533053}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!222 &367533056
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367533053}
+  m_CullTransparentMesh: 1
 --- !u!64 &368482541
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8100,7 +8190,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 351d62854de7508409172edc4cb12f3c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1852576806548013000, guid: 351d62854de7508409172edc4cb12f3c, type: 3}
       propertyPath: m_LocalRotation.x
@@ -8452,7 +8542,7 @@ MonoBehaviour:
           m_CallState: 2
     waitForEventComplete: 1
     waitDuration: 0
-  - isExpanded: 1
+  - isExpanded: 0
     stepName: Wait 0.5 seconds
     stepType: 2
     textLines: []
@@ -8507,7 +8597,7 @@ MonoBehaviour:
           m_CallState: 2
     waitForEventComplete: 1
     waitDuration: 0
-  - isExpanded: 1
+  - isExpanded: 0
     stepName: Wait 2 seconds
     stepType: 2
     textLines:
@@ -8532,7 +8622,7 @@ MonoBehaviour:
           m_CallState: 2
     waitForEventComplete: 0
     waitDuration: 2
-  - isExpanded: 1
+  - isExpanded: 0
     stepName: Dialogue before falling asleep
     stepType: 0
     textLines:
@@ -8546,7 +8636,7 @@ MonoBehaviour:
         m_Calls: []
     waitForEventComplete: 0
     waitDuration: 0
-  - isExpanded: 1
+  - isExpanded: 0
     stepName: Fade Out to Black
     stepType: 1
     textLines: []
@@ -8567,7 +8657,7 @@ MonoBehaviour:
           m_CallState: 2
     waitForEventComplete: 0
     waitDuration: 0
-  - isExpanded: 1
+  - isExpanded: 0
     stepName: Set ambience volume to 0
     stepType: 1
     textLines: []
@@ -8588,7 +8678,7 @@ MonoBehaviour:
           m_CallState: 2
     waitForEventComplete: 0
     waitDuration: 0
-  - isExpanded: 1
+  - isExpanded: 0
     stepName: Wait 4 seconds
     stepType: 2
     textLines: []
@@ -8597,7 +8687,7 @@ MonoBehaviour:
         m_Calls: []
     waitForEventComplete: 0
     waitDuration: 4
-  - isExpanded: 1
+  - isExpanded: 0
     stepName: Change ambience to dream music
     stepType: 1
     textLines: []
@@ -8618,7 +8708,7 @@ MonoBehaviour:
           m_CallState: 2
     waitForEventComplete: 0
     waitDuration: 4
-  - isExpanded: 1
+  - isExpanded: 0
     stepName: Play Dream Music
     stepType: 1
     textLines: []
@@ -8639,7 +8729,7 @@ MonoBehaviour:
           m_CallState: 2
     waitForEventComplete: 0
     waitDuration: 4
-  - isExpanded: 1
+  - isExpanded: 0
     stepName: Wait 2 Seconds
     stepType: 2
     textLines: []
@@ -8660,7 +8750,7 @@ MonoBehaviour:
           m_CallState: 2
     waitForEventComplete: 0
     waitDuration: 2
-  - isExpanded: 1
+  - isExpanded: 0
     stepName: Play Door SFX
     stepType: 1
     textLines: []
@@ -8681,7 +8771,7 @@ MonoBehaviour:
           m_CallState: 2
     waitForEventComplete: 0
     waitDuration: 4
-  - isExpanded: 1
+  - isExpanded: 0
     stepName: Wait 1 sec
     stepType: 2
     textLines: []
@@ -8918,7 +9008,7 @@ MonoBehaviour:
           m_CallState: 2
     waitForEventComplete: 0
     waitDuration: 2
-  - isExpanded: 1
+  - isExpanded: 0
     stepName: Enable Look At Visitor Camera
     stepType: 1
     textLines: []
@@ -8960,7 +9050,7 @@ MonoBehaviour:
           m_CallState: 2
     waitForEventComplete: 1
     waitDuration: 2
-  - isExpanded: 1
+  - isExpanded: 0
     stepName: Visitor Dialogue
     stepType: 0
     textLines:
@@ -8986,7 +9076,7 @@ MonoBehaviour:
           m_CallState: 2
     waitForEventComplete: 1
     waitDuration: 2
-  - isExpanded: 1
+  - isExpanded: 0
     stepName: Visitor moves to organ
     stepType: 1
     textLines:
@@ -9034,6 +9124,106 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 115452500}
+          m_TargetAssemblyTypeName: npcController, Assembly-CSharp
+          m_MethodName: MoveToDestination
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    waitForEventComplete: 0
+    waitDuration: 1
+  - isExpanded: 0
+    stepName: Wait 1.5 sec
+    stepType: 2
+    textLines:
+    - <color=#D4AF37>Sleeping on the job?
+    - <color=white>What?
+    - <color=#D4AF37>How is the SS Cadence going to navigate the waters without you?
+    - <color=white>It's not here yet.
+    - I need rest to perform.
+    - <color=#D4AF37>Is the sonar monitor still giving you problems?
+    - <color=white>No.
+    - <color=#D4AF37>How did you fix it?
+    - <color=white>The circuit board was corroded.
+    - The last crate of supplies had some alcohol.
+    - <color=#D4AF37>What about the pipe organ?
+    - <color=#D4AF37>You haven't performed in a while.
+    - <color=white>It's fine.
+    - <color=#D4AF37>And you?
+    - <color=white>Hungry. Exhausted.
+    - <color=#D4AF37>Are you completely out of supplies?
+    - <color=white>I'll help the SS Cadence navigate through the rocks and they'll
+      drop supplies for me.
+    - The ships always do.
+    - <color=#D4AF37>You had a rough time with the last ship.
+    - <color=#D4AF37>It hit quite a few rocks.
+    - <color=white>But they made it through.
+    - <color=#D4AF37>Yes.
+    - <color=white>And I got my supplies.
+    - <color=#D4AF37>Barely.
+    - <color=white>Well the monitor is fixed now, so...
+    - <color=#D4AF37>Elara.
+    - <color=white>Yeah?
+    - <color=#D4AF37>They're here.
+    onEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 462883040}
+          m_TargetAssemblyTypeName: FaderManager, Assembly-CSharp
+          m_MethodName: InstantFadeIn
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    waitForEventComplete: 0
+    waitDuration: 1.5
+  - isExpanded: 0
+    stepName: Player looks at visitor
+    stepType: 1
+    textLines:
+    - <color=#D4AF37>Sleeping on the job?
+    - <color=white>What?
+    - <color=#D4AF37>How is the SS Cadence going to navigate the waters without you?
+    - <color=white>It's not here yet.
+    - I need rest to perform.
+    - <color=#D4AF37>Is the sonar monitor still giving you problems?
+    - <color=white>No.
+    - <color=#D4AF37>How did you fix it?
+    - <color=white>The circuit board was corroded.
+    - The last crate of supplies had some alcohol.
+    - <color=#D4AF37>What about the pipe organ?
+    - <color=#D4AF37>You haven't performed in a while.
+    - <color=white>It's fine.
+    - <color=#D4AF37>And you?
+    - <color=white>Hungry. Exhausted.
+    - <color=#D4AF37>Are you completely out of supplies?
+    - <color=white>I'll help the SS Cadence navigate through the rocks and they'll
+      drop supplies for me.
+    - The ships always do.
+    - <color=#D4AF37>You had a rough time with the last ship.
+    - <color=#D4AF37>It hit quite a few rocks.
+    - <color=white>But they made it through.
+    - <color=#D4AF37>Yes.
+    - <color=white>And I got my supplies.
+    - <color=#D4AF37>Barely.
+    - <color=white>Well the monitor is fixed now, so...
+    - <color=#D4AF37>Elara.
+    - <color=white>Yeah?
+    - <color=#D4AF37>They're here.
+    onEvent:
+      m_PersistentCalls:
+        m_Calls:
         - m_Target: {fileID: 1187132136}
           m_TargetAssemblyTypeName: CameraMover, Assembly-CSharp
           m_MethodName: setFollowTarget
@@ -9058,6 +9248,85 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    waitForEventComplete: 1
+    waitDuration: 1
+  - isExpanded: 0
+    stepName: Visitor Dialogue
+    stepType: 0
+    textLines:
+    - <color=#D4AF37>Is the sonar monitor still giving you problems?
+    - <color=white>No.
+    - <color=#D4AF37>How did you fix it?
+    - <color=white>The circuit board was corroded.
+    - The last crate of supplies had some alcohol.
+    - <color=#D4AF37>What about the pipe organ?
+    - <color=#D4AF37>You haven't performed in a while.
+    - <color=white>It's fine.
+    onEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1230063848}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 4
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    waitForEventComplete: 1
+    waitDuration: 2
+  - isExpanded: 0
+    stepName: Visitor moves to Player
+    stepType: 1
+    textLines:
+    - <color=#D4AF37>Sleeping on the job?
+    - <color=white>What?
+    - <color=#D4AF37>How is the SS Cadence going to navigate the waters without you?
+    - <color=white>It's not here yet.
+    - I need rest to perform.
+    - <color=#D4AF37>Is the sonar monitor still giving you problems?
+    - <color=white>No.
+    - <color=#D4AF37>How did you fix it?
+    - <color=white>The circuit board was corroded.
+    - The last crate of supplies had some alcohol.
+    - <color=#D4AF37>What about the pipe organ?
+    - <color=#D4AF37>You haven't performed in a while.
+    - <color=white>It's fine.
+    - <color=#D4AF37>And you?
+    - <color=white>Hungry. Exhausted.
+    - <color=#D4AF37>Are you completely out of supplies?
+    - <color=white>I'll help the SS Cadence navigate through the rocks and they'll
+      drop supplies for me.
+    - The ships always do.
+    - <color=#D4AF37>You had a rough time with the last ship.
+    - <color=#D4AF37>It hit quite a few rocks.
+    - <color=white>But they made it through.
+    - <color=#D4AF37>Yes.
+    - <color=white>And I got my supplies.
+    - <color=#D4AF37>Barely.
+    - <color=white>Well the monitor is fixed now, so...
+    - <color=#D4AF37>Elara.
+    - <color=white>Yeah?
+    - <color=#D4AF37>They're here.
+    onEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 115452500}
+          m_TargetAssemblyTypeName: npcController, Assembly-CSharp
+          m_MethodName: SetDestination
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2008412561}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
         - m_Target: {fileID: 115452500}
           m_TargetAssemblyTypeName: npcController, Assembly-CSharp
           m_MethodName: MoveToDestination
@@ -9072,18 +9341,10 @@ MonoBehaviour:
           m_CallState: 2
     waitForEventComplete: 1
     waitDuration: 1
-  - isExpanded: 1
+  - isExpanded: 0
     stepName: Visitor Dialogue
     stepType: 0
     textLines:
-    - <color=#D4AF37>Is the sonar monitor still giving you problems?
-    - <color=white>No.
-    - <color=#D4AF37>How did you fix it?
-    - <color=white>The circuit board was corroded.
-    - The last crate of supplies had some alcohol.
-    - <color=#D4AF37>What about the pipe organ?
-    - <color=#D4AF37>You haven't performed in a while.
-    - <color=white>It's fine.
     - <color=#D4AF37>And you?
     - <color=white>Hungry. Exhausted.
     - <color=#D4AF37>Are you completely out of supplies?
@@ -9168,7 +9429,7 @@ MonoBehaviour:
     waitForEventComplete: 0
     waitDuration: 2
   - isExpanded: 0
-    stepName: Stop ambience
+    stepName: Stop ambience and go back to lay down cam
     stepType: 1
     textLines:
     - <color=#D4AF37>Sleeping on the job?
@@ -9203,6 +9464,18 @@ MonoBehaviour:
     onEvent:
       m_PersistentCalls:
         m_Calls:
+        - m_Target: {fileID: 1187132136}
+          m_TargetAssemblyTypeName: CameraMover, Assembly-CSharp
+          m_MethodName: SetMoveDuration
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0.1
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
         - m_Target: {fileID: 1495024508}
           m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
           m_MethodName: FadeOutAmbientVolume
@@ -9215,36 +9488,15 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-    waitForEventComplete: 0
-    waitDuration: 2
-  - isExpanded: 0
-    stepName: Disable Look at Visitor Camera
-    stepType: 1
-    textLines: []
-    onEvent:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2079140460}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
+        - m_Target: {fileID: 1187132136}
+          m_TargetAssemblyTypeName: CameraMover, Assembly-CSharp
+          m_MethodName: setFollowTarget
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 1230063849}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
             m_IntArgument: 0
-            m_FloatArgument: 4
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1416231853}
-          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-          m_MethodName: SetCameraTransitionSpeed
-          m_Mode: 4
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 1
+            m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
@@ -9364,7 +9616,7 @@ MonoBehaviour:
     waitForEventComplete: 0
     waitDuration: 2
   - isExpanded: 0
-    stepName: Change ambience to ocean and fade in
+    stepName: Change ambience to ocean / fade in audio / turn on screens
     stepType: 1
     textLines: []
     onEvent:
@@ -9580,15 +9832,27 @@ MonoBehaviour:
     onEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1230063848}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
+        - m_Target: {fileID: 1187132136}
+          m_TargetAssemblyTypeName: CameraMover, Assembly-CSharp
+          m_MethodName: SetMoveDuration
+          m_Mode: 4
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 1
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1187132136}
+          m_TargetAssemblyTypeName: CameraMover, Assembly-CSharp
+          m_MethodName: ReturnToPlayer
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
@@ -9682,6 +9946,18 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1187132136}
+          m_TargetAssemblyTypeName: CameraMover, Assembly-CSharp
+          m_MethodName: SetMoveDuration
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 2
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
@@ -10234,6 +10510,9 @@ Transform:
   m_Children:
   - {fileID: 271613026}
   - {fileID: 781994919}
+  - {fileID: 780414401}
+  - {fileID: 872671265}
+  - {fileID: 72906284}
   m_Father: {fileID: 1807883586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &519618174
@@ -11641,7 +11920,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &580808385
 Transform:
   m_ObjectHideFlags: 0
@@ -13235,6 +13514,143 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 711448057}
   m_Mesh: {fileID: 8848284758245803599, guid: ebda710a6bf744143873cc2f541cc574, type: 3}
+--- !u!1 &713758971
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 713758972}
+  - component: {fileID: 713758974}
+  - component: {fileID: 713758973}
+  m_Layer: 5
+  m_Name: TMP_move
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &713758972
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 713758971}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1742113597}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 30.3}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &713758973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 713758971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Steer the Ship
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 73acefcecb2cd3f4cb10cdbd3f2b3366, type: 2}
+  m_sharedMaterial: {fileID: -2442442632827570731, guid: 73acefcecb2cd3f4cb10cdbd3f2b3366, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 45
+  m_fontSizeBase: 45
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_characterHorizontalScale: 1
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &713758974
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 713758971}
+  m_CullTransparentMesh: 1
 --- !u!1 &714227283
 GameObject:
   m_ObjectHideFlags: 0
@@ -14115,6 +14531,109 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 766916951}
   m_Mesh: {fileID: 4513454064602298965, guid: 98ee3f72e65169145869dac38256d5c6, type: 3}
+--- !u!1 &780414400
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 780414401}
+  - component: {fileID: 780414402}
+  m_Layer: 0
+  m_Name: TurnOnMonitor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &780414401
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780414400}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.9997194, z: -0, w: -0.02368917}
+  m_LocalPosition: {x: -2.760823, y: 6.8720016, z: -0.20687859}
+  m_LocalScale: {x: 0.54830366, y: 0.54830366, z: 0.54830366}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 509745564}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &780414402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780414400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b8bcfaa208b3840bfb1b322c1a5fba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
+  dialogueTemplate: {fileID: 11400000, guid: 114655011f9b6fa4cabbf4bcc1966fc4, type: 2}
+  lockPlayer: 1
+  unlockPlayerOnEnd: 1
+  runtimeSteps:
+  - isExpanded: 1
+    stepName: Look at monitor button
+    stepType: 1
+    textLines: []
+    onEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1187132136}
+          m_TargetAssemblyTypeName: CameraMover, Assembly-CSharp
+          m_MethodName: SetLookDuration
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1187132136}
+          m_TargetAssemblyTypeName: CameraMover, Assembly-CSharp
+          m_MethodName: SetForceLookTarget
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2637749042101650115}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    waitForEventComplete: 1
+    waitDuration: 0
+  - isExpanded: 0
+    stepName: Give player instructions
+    stepType: 0
+    textLines:
+    - <i>I have to turn on the monitor</i>
+    onEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1187132136}
+          m_TargetAssemblyTypeName: CameraMover, Assembly-CSharp
+          m_MethodName: SetForceLookTarget
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2637749042101650115}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    waitForEventComplete: 1
+    waitDuration: 0
 --- !u!1 &781994915
 GameObject:
   m_ObjectHideFlags: 0
@@ -14127,6 +14646,7 @@ GameObject:
   - component: {fileID: 781994918}
   - component: {fileID: 781994917}
   - component: {fileID: 781994916}
+  - component: {fileID: 781994920}
   m_Layer: 9
   m_Name: Tutorial_Ship
   m_TagString: Interact
@@ -14148,22 +14668,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
   dialogueTemplate: {fileID: 11400000, guid: 114655011f9b6fa4cabbf4bcc1966fc4, type: 2}
   lockPlayer: 1
-  unlockPlayerOnEnd: 1
+  unlockPlayerOnEnd: 0
   runtimeSteps:
   - isExpanded: 1
-    stepName: Step
+    stepName: Sit at Organ
     stepType: 1
     textLines: []
     onEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1187132131}
-          m_TargetAssemblyTypeName: StarterAssets.FirstPersonController, Assembly-CSharp
-          m_MethodName: setForceLookTarget
+        - m_Target: {fileID: 1187132136}
+          m_TargetAssemblyTypeName: CameraMover, Assembly-CSharp
+          m_MethodName: setFollowTarget
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 781994919}
+            m_ObjectArgument: {fileID: 72906284}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1187132136}
+          m_TargetAssemblyTypeName: CameraMover, Assembly-CSharp
+          m_MethodName: MoveToDestination
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -14171,16 +14703,49 @@ MonoBehaviour:
           m_CallState: 2
     waitForEventComplete: 0
     waitDuration: 0
+  - isExpanded: 0
+    stepName: Wait 1 sec
+    stepType: 2
+    textLines: []
+    onEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1187132136}
+          m_TargetAssemblyTypeName: CameraMover, Assembly-CSharp
+          m_MethodName: setFollowTarget
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 72906284}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1187132136}
+          m_TargetAssemblyTypeName: CameraMover, Assembly-CSharp
+          m_MethodName: MoveToDestination
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    waitForEventComplete: 0
+    waitDuration: 1
   - isExpanded: 1
-    stepName: Step
+    stepName: Start Minigame
     stepType: 1
     textLines: []
     onEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1187132131}
-          m_TargetAssemblyTypeName: StarterAssets.FirstPersonController, Assembly-CSharp
-          m_MethodName: enableForceLook
+        - m_Target: {fileID: 1860214910}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -14190,16 +14755,66 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-    waitForEventComplete: 0
-    waitDuration: 0
-  - isExpanded: 1
-    stepName: Step
-    stepType: 0
-    textLines:
-    - <i>TEST
-    onEvent:
-      m_PersistentCalls:
-        m_Calls: []
+        - m_Target: {fileID: 1860214913}
+          m_TargetAssemblyTypeName: TutorialController, Assembly-CSharp
+          m_MethodName: set_enabled
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1860214913}
+          m_TargetAssemblyTypeName: TutorialController, Assembly-CSharp
+          m_MethodName: ShowTutorial
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 367533055}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.CanvasGroup, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 2084977389}
+          m_TargetAssemblyTypeName: SonarMinigameController, Assembly-CSharp
+          m_MethodName: StartMinigame
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1495024508}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: ChangeMusicClip
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: c4239882ec9b8aa418b73f0e760f756b, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1495024508}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: FadeInMusic
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
     waitForEventComplete: 0
     waitDuration: 0
 --- !u!114 &781994917
@@ -14218,9 +14833,9 @@ MonoBehaviour:
   onInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 781994916}
-        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
-        m_MethodName: TriggerDialogue
+      - m_Target: {fileID: 781994920}
+        m_TargetAssemblyTypeName: PipeOrganLogic, Assembly-CSharp
+        m_MethodName: ActivateSonarMinigame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14266,6 +14881,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 509745564}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &781994920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781994915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5589e878d2a227a4586a85d3da5f138b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PipeOrganLogic
+  sonarController: {fileID: 2084977389}
+  turnOnMonitorDialogueTrigger: {fileID: 780414402}
+  turnOnSonarDialogueTrigger: {fileID: 872671266}
+  startMinigameDialogueTrigger: {fileID: 781994916}
 --- !u!64 &807177107
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -15830,6 +16461,109 @@ Transform:
   m_Children: []
   m_Father: {fileID: 543450651901073204}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &872671264
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 872671265}
+  - component: {fileID: 872671266}
+  m_Layer: 0
+  m_Name: TurnOnSonar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &872671265
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872671264}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.9997194, z: -0, w: -0.02368917}
+  m_LocalPosition: {x: -2.760823, y: 6.8720016, z: -0.20687859}
+  m_LocalScale: {x: 0.54830366, y: 0.54830366, z: 0.54830366}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 509745564}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &872671266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872671264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b8bcfaa208b3840bfb1b322c1a5fba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
+  dialogueTemplate: {fileID: 11400000, guid: 114655011f9b6fa4cabbf4bcc1966fc4, type: 2}
+  lockPlayer: 1
+  unlockPlayerOnEnd: 1
+  runtimeSteps:
+  - isExpanded: 1
+    stepName: Look at sonar switch
+    stepType: 1
+    textLines: []
+    onEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1187132136}
+          m_TargetAssemblyTypeName: CameraMover, Assembly-CSharp
+          m_MethodName: SetLookDuration
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1187132136}
+          m_TargetAssemblyTypeName: CameraMover, Assembly-CSharp
+          m_MethodName: SetForceLookTarget
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1218068419}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    waitForEventComplete: 1
+    waitDuration: 0
+  - isExpanded: 0
+    stepName: Give player instructions
+    stepType: 0
+    textLines:
+    - <i>I have to turn on the sonar</i>
+    onEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1187132136}
+          m_TargetAssemblyTypeName: CameraMover, Assembly-CSharp
+          m_MethodName: SetForceLookTarget
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2637749042101650115}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    waitForEventComplete: 1
+    waitDuration: 0
 --- !u!1001 &881663639
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16639,7 +17373,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &901512952
 Transform:
   m_ObjectHideFlags: 0
@@ -17441,6 +18175,81 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &927363608
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 927363609}
+  - component: {fileID: 927363611}
+  - component: {fileID: 927363610}
+  m_Layer: 5
+  m_Name: D_key
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &927363609
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927363608}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1742113597}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 40, y: -80}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &927363610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927363608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: ddf7275d9d018ff4a82693c62c64621e, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &927363611
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927363608}
+  m_CullTransparentMesh: 1
 --- !u!1 &928256044 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2087005129525781647, guid: 98ee3f72e65169145869dac38256d5c6, type: 3}
@@ -17753,6 +18562,7 @@ Transform:
   m_Children:
   - {fileID: 1436644418}
   - {fileID: 115452498}
+  - {fileID: 2008412561}
   - {fileID: 901512952}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -18650,7 +19460,7 @@ AudioSource:
   m_GameObject: {fileID: 997685846}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -7851008546172283079, guid: 25308239846e4b24c85bae544f07625f, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 15d4b67449c67d14c915ee0a2636e3e2, type: 3}
   m_PlayOnAwake: 1
@@ -19768,7 +20578,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1111890053
 Transform:
   m_ObjectHideFlags: 0
@@ -22581,6 +23391,81 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1353504872}
   m_Mesh: {fileID: -2172481199354609234, guid: 98ee3f72e65169145869dac38256d5c6, type: 3}
+--- !u!1 &1359219983
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1359219984}
+  - component: {fileID: 1359219986}
+  - component: {fileID: 1359219985}
+  m_Layer: 5
+  m_Name: A_key
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1359219984
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359219983}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1742113597}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -40, y: -80}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1359219985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359219983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 9ec73d579ab9b0a419a36d1d4b0500b5, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1359219986
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359219983}
+  m_CullTransparentMesh: 1
 --- !u!64 &1374753336
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -23426,6 +24311,8 @@ MonoBehaviour:
   outputMixerGroup: {fileID: -6933939644120307395, guid: 25308239846e4b24c85bae544f07625f, type: 2}
   releaseTime: 0.12
   masterVolume: 0.35
+  playerInput: {fileID: 710812400}
+  sonarMinigame: {fileID: 2084977389}
   enableBassLayer: 1
   melodyOctaveOffset: 0
   bassOctaveOffset: -2
@@ -25796,10 +26683,10 @@ AudioSource:
   m_GameObject: {fileID: 1502362563}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 25308239846e4b24c85bae544f07625f, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -28207,6 +29094,44 @@ Transform:
   m_Children: []
   m_Father: {fileID: 388746388}
   m_LocalEulerAnglesHint: {x: 0, y: 6.626, z: 0}
+--- !u!1 &1742113596
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1742113597}
+  m_Layer: 5
+  m_Name: MovePrompt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1742113597
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742113596}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1359219984}
+  - {fileID: 927363609}
+  - {fileID: 713758972}
+  m_Father: {fileID: 367533054}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 143, y: 137}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1746261990 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 76de03e6a4a6beb48abc0e035290d2c2, type: 3}
@@ -28255,7 +29180,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1752892871
 Transform:
   m_ObjectHideFlags: 0
@@ -29672,7 +30597,7 @@ AudioSource:
   m_GameObject: {fileID: 1845796809}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -901980927514995847, guid: 25308239846e4b24c85bae544f07625f, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
@@ -29962,6 +30887,7 @@ RectTransform:
   m_Children:
   - {fileID: 1477364464}
   - {fileID: 1790121686}
+  - {fileID: 367533054}
   m_Father: {fileID: 408539825}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -29991,6 +30917,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TutorialController
   movementTutorial: {fileID: 1477364465}
   interactionTutorial: {fileID: 1790121687}
+  steerShipTutorial: {fileID: 367533055}
   playerInput: {fileID: 710812400}
   interactionController: {fileID: 0}
 --- !u!1 &1860831050 stripped
@@ -32348,6 +33275,37 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2779458198599150392, guid: ebda710a6bf744143873cc2f541cc574, type: 3}
+--- !u!1 &2008412560
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2008412561}
+  m_Layer: 0
+  m_Name: Point_LookAtPlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2008412561
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008412560}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.9332107, z: -0, w: 0.35932967}
+  m_LocalPosition: {x: -71.277, y: 28.186098, z: 567.323}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 932063558}
+  m_LocalEulerAnglesHint: {x: 0, y: -137.882, z: 0}
 --- !u!1 &2009467303
 GameObject:
   m_ObjectHideFlags: 0
@@ -34471,14 +35429,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5870c037173c93d4087d3139568d613b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SonarMinigameController
+  isMiniGameActive: 0
+  isReadyForInput: 0
+  isSonarPingEnabled: 0
+  isScreenOn: 0
   targetRendererA: {fileID: 1752892873}
   targetRendererB: {fileID: 1111890055}
-  isScreenOn: 0
   screenFadeDuration: 0.35
   boatController: {fileID: 672114351}
   sonarPingController: {fileID: 86142652}
-  isSonarPingEnabled: 0
-  isReadyForInput: 0
   sonarScreen: {fileID: 1752892870}
   boatScreen: {fileID: 1111890052}
 --- !u!1 &2092585734 stripped
@@ -53204,6 +54163,10 @@ PrefabInstance:
       propertyPath: characterController
       value: 
       objectReference: {fileID: 1187132132}
+    - target: {fileID: 8616685848737228371, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: playerUICanvasGroup
+      value: 
+      objectReference: {fileID: 1276361492}
     - target: {fileID: 8616685848737228371, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: RockFootsteps.Array.size
       value: 12

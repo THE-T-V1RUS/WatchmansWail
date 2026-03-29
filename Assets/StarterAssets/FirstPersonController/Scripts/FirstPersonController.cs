@@ -2,6 +2,7 @@
 using UnityEngine;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
+using System.Collections;
 #endif
 
 namespace StarterAssets
@@ -81,6 +82,10 @@ namespace StarterAssets
 		public float TopClamp = 90.0f;
 		[Tooltip("How far in degrees can you move the camera down")]
 		public float BottomClamp = -90.0f;
+
+		[Header("Player UI")]
+		[SerializeField] private CanvasGroup playerUICanvasGroup;
+		private Coroutine uiFadeRoutine;
 
 		// cinemachine
 		private float _cinemachineTargetPitch;
@@ -516,6 +521,43 @@ namespace StarterAssets
 			{
 				cameraMover.setFollowTarget(target);
 			}
+		}
+
+		public void FadeOutPlayerUI()
+		{
+			if (playerUICanvasGroup != null)
+			{
+				if (uiFadeRoutine != null)
+				{
+					StopCoroutine(uiFadeRoutine);
+				}
+				uiFadeRoutine = StartCoroutine(FadeCanvasGroup(playerUICanvasGroup, playerUICanvasGroup.alpha, 0f, 1f));
+			}
+		}
+
+		public void FadeInPlayerUI()
+		{
+			if (playerUICanvasGroup != null)
+			{
+				if (uiFadeRoutine != null)
+				{
+					StopCoroutine(uiFadeRoutine);
+				}
+				uiFadeRoutine = StartCoroutine(FadeCanvasGroup(playerUICanvasGroup, playerUICanvasGroup.alpha, 1f, 1f));
+			}
+		}
+
+		private IEnumerator FadeCanvasGroup(CanvasGroup canvasGroup, float startAlpha, float endAlpha, float duration)
+		{
+			float elapsed = 0f;
+			while (elapsed < duration)
+			{
+				elapsed += Time.unscaledDeltaTime;
+				canvasGroup.alpha = Mathf.Lerp(startAlpha, endAlpha, elapsed / duration);
+				yield return null;
+			}
+			canvasGroup.alpha = endAlpha;
+			uiFadeRoutine = null;
 		}
 	}
 }

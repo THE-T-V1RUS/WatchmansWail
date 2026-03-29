@@ -1,8 +1,8 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System;
-using UnityEngine.InputSystem;
 using UnityEngine.Audio;
+using StarterAssets;
 
 [RequireComponent(typeof(AudioSource))]
 public class PipeOrganSoundController : MonoBehaviour
@@ -33,6 +33,10 @@ public class PipeOrganSoundController : MonoBehaviour
     [SerializeField] private AudioMixerGroup outputMixerGroup;
     [SerializeField] private float releaseTime = 0.12f;
     [SerializeField] private float masterVolume = 0.35f;
+
+    [Header("Input")]
+    [SerializeField] private StarterAssetsInputs playerInput;
+    [SerializeField] private SonarMinigameController sonarMinigame;
 
     [Header("Bass Layer")]
     [SerializeField] private bool enableBassLayer = true;
@@ -96,14 +100,29 @@ public class PipeOrganSoundController : MonoBehaviour
 
     private void Update()
     {
-        Keyboard keyboard = Keyboard.current;
-        if (keyboard == null)
+        if (playerInput == null)
         {
             return;
         }
 
-        bool leftPressed = keyboard.leftArrowKey.isPressed;
-        bool rightPressed = keyboard.rightArrowKey.isPressed;
+        if (sonarMinigame == null  || !sonarMinigame.MiniGameIsActive())
+        {
+            if (leftWasPressed)
+            {
+                StopChord(leftChordSources, false);
+                leftWasPressed = false;
+            }
+            if (rightWasPressed)
+            {
+                StopChord(rightChordSources, false);
+                rightWasPressed = false;
+            }
+            return;
+        }
+
+        float moveX = playerInput.move.x;
+        bool leftPressed = moveX < -0.1f;
+        bool rightPressed = moveX > 0.1f;
 
         if (leftPressed && !leftWasPressed)
         {

@@ -4,8 +4,7 @@ using StarterAssets;
 
 public class TutorialController : MonoBehaviour
 {
-    [SerializeField] CanvasGroup movementTutorial;
-    [SerializeField] CanvasGroup interactionTutorial;
+    [SerializeField] CanvasGroup movementTutorial, interactionTutorial, steerShipTutorial;
     [SerializeField] StarterAssetsInputs playerInput;
     [SerializeField] InteractionController interactionController;
 
@@ -16,6 +15,8 @@ public class TutorialController : MonoBehaviour
     bool playerHasShownMovementComprehension = false;
     bool hasDisplayedInteractionTutorial = false;
     bool hasShownInteractionComprehension = false;
+    bool hasShownSteerShipComprehension = false;
+    bool hasDisplayedSteerShipTutorial = false;
 
     void Awake()
     {
@@ -50,6 +51,11 @@ public class TutorialController : MonoBehaviour
 
     public void ShowTutorial(CanvasGroup tutorialCanvasGroup)
     {
+        if (tutorialCanvasGroup == steerShipTutorial)
+        {
+            hasDisplayedSteerShipTutorial = true;
+        }
+
         StartCoroutine(FadeInCanvasGroup(tutorialCanvasGroup, 1f));
     }
 
@@ -159,5 +165,14 @@ public class TutorialController : MonoBehaviour
             }
         }
 
+        // If steer ship tutorial is active, check for comprehension
+        if (hasDisplayedSteerShipTutorial && !hasShownSteerShipComprehension)
+        {
+            if (Mathf.Abs(playerInput.move.x) > 0.1f)
+            {
+                hasShownSteerShipComprehension = true;
+                StartCoroutine(FadeOutCanvasGroupWithDelay(steerShipTutorial, 1f, 1f));
+            }
+        }
     }
 }

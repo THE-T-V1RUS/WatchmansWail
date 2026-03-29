@@ -271,7 +271,7 @@ public class DialogueManager : MonoBehaviour
             yield return FadeCutsceneCanvas(0.0f, fadeDuration);
         }
 
-        if (playerUICanvasGroup != null)
+        if (_unlockPlayerOnEnd && playerUICanvasGroup != null)
         {
             yield return FadePlayerUICanvas(1.0f, fadeDuration);
         }

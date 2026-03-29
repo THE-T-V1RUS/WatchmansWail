@@ -350,4 +350,14 @@ public class CameraMover : MonoBehaviour
             DialogueManager.Instance.CompleteDialogueEvent();
         }
     }
+
+    public void SetMoveDuration(float duration)
+    {
+        moveDuration = duration;
+    }
+
+    public void SetLookDuration(float duration)
+    {
+        lookDuration = duration;
+    }
 }

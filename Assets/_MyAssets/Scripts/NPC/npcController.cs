@@ -11,8 +11,11 @@ public class npcController : MonoBehaviour
     [SerializeField] private bool notifyDialogueOnArrival = true;
     [SerializeField] List<AudioClip> footstepClips;
 
+    [SerializeField] private float settleSpeed = 3f;
+
     private static readonly int IsWalking = Animator.StringToHash("IsWalking");
     private bool isMoving;
+    private bool isSettling;
 
     void Awake()
     {
@@ -21,7 +24,15 @@ public class npcController : MonoBehaviour
 
     void Update()
     {
-        if (!isMoving || destinationPoint == null) return;
+        if (destinationPoint == null) return;
+
+        if (isSettling)
+        {
+            Settle();
+            return;
+        }
+
+        if (!isMoving) return;
 
         Vector3 target = destinationPoint.position;
         Vector3 direction = target - transform.position;
@@ -31,9 +42,8 @@ public class npcController : MonoBehaviour
         if (distance <= stoppingDistance)
         {
             isMoving = false;
+            isSettling = true;
             npcAnimator.SetBool(IsWalking, false);
-            if (notifyDialogueOnArrival)
-                NotifyDialogueComplete();
             return;
         }
 
@@ -41,6 +51,28 @@ public class npcController : MonoBehaviour
         Quaternion targetRotation = Quaternion.LookRotation(moveDir);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
         transform.position += moveDir * (moveSpeed * Time.deltaTime);
+    }
+
+    private void Settle()
+    {
+        float t = settleSpeed * Time.deltaTime;
+
+        Vector3 targetPos = destinationPoint.position;
+        targetPos.y = transform.position.y;
+        transform.position = Vector3.Lerp(transform.position, targetPos, t);
+        transform.rotation = Quaternion.Slerp(transform.rotation, destinationPoint.rotation, t);
+
+        float posDelta = Vector3.Distance(transform.position, targetPos);
+        float rotDelta = Quaternion.Angle(transform.rotation, destinationPoint.rotation);
+
+        if (posDelta < 0.005f && rotDelta < 0.5f)
+        {
+            transform.position = targetPos;
+            transform.rotation = destinationPoint.rotation;
+            isSettling = false;
+            if (notifyDialogueOnArrival)
+                NotifyDialogueComplete();
+        }
     }
 
     public void SetDestination(Transform destination)
@@ -62,6 +94,7 @@ public class npcController : MonoBehaviour
     public void Stop()
     {
         isMoving = false;
+        isSettling = false;
         npcAnimator.SetBool(IsWalking, false);
     }
 

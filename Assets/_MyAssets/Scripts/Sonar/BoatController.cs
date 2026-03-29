@@ -1,3 +1,4 @@
+using StarterAssets;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -57,6 +58,7 @@ public class BoatController : MonoBehaviour
     private float currentSpeed = 0f;
     private float currentHealth;
     private Rigidbody rb;
+    private StarterAssetsInputs _input;
 
     public float DistanceToSafeZone { get; private set; }
     public bool IsDriftForwardEnabled => driftForwardEnabled;
@@ -81,6 +83,7 @@ public class BoatController : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        _input = FindObjectOfType<StarterAssetsInputs>();
         if (rb != null)
         {
             rb.interpolation = RigidbodyInterpolation.Interpolate;
@@ -172,22 +175,13 @@ public class BoatController : MonoBehaviour
 
     private void ReadSteeringInput()
     {
-        if (!driftForwardEnabled)
+        if (!driftForwardEnabled || _input == null)
         {
             steeringInput = 0f;
             return;
         }
 
-        float steerInput = 0f;
-
-        if (Keyboard.current.leftArrowKey.isPressed)
-        {
-            steerInput = -1f;
-        }
-        else if (Keyboard.current.rightArrowKey.isPressed)
-        {
-            steerInput = 1f;
-        }
+        float steerInput = _input.move.x;
 
         steeringInput = Mathf.MoveTowards(steeringInput, steerInput, inputResponse * Time.deltaTime);
     }
@@ -372,7 +366,7 @@ public class BoatController : MonoBehaviour
         DistanceToSafeZone = Mathf.Max(0f, targetZPosition - currentZ);
     }
 
-    private void ResetBoatState()
+    public void ResetBoatState()
     {
         isDead = false;
         fadeTimer = 0f;

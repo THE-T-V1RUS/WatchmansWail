@@ -3,6 +3,10 @@ using UnityEngine;
 
 public class SonarMinigameController : MonoBehaviour
 {
+    [SerializeField] private bool isMiniGameActive = false;
+    public bool isReadyForInput = false;
+    [SerializeField] private bool isSonarPingEnabled = false;
+    [SerializeField] private bool isScreenOn = false;
     private const string UnlitColorProperty = "_UnlitColor";
 
     [Header("Sonar Material")]
@@ -12,7 +16,6 @@ public class SonarMinigameController : MonoBehaviour
     [SerializeField] private Renderer targetRendererB;
 
     [Header("Screen State")]
-    [SerializeField] private bool isScreenOn = false;
     [SerializeField] private float screenFadeDuration = 0.35f;
 
     [Header("Boat Controller")]
@@ -20,7 +23,6 @@ public class SonarMinigameController : MonoBehaviour
 
     [Header("Sonar Ping Controller")]
     [SerializeField] private SonarPingController sonarPingController;
-    [SerializeField] private bool isSonarPingEnabled = false;
 
     private Material runtimeMaterialA;
     private Material runtimeMaterialB;
@@ -28,7 +30,6 @@ public class SonarMinigameController : MonoBehaviour
     private bool previousScreenOnState;
     private bool previousSonarPingEnabledState;
 
-    public bool isReadyForInput = false;
 
     [SerializeField] private GameObject sonarScreen, boatScreen;
 
@@ -56,11 +57,15 @@ public class SonarMinigameController : MonoBehaviour
             previousScreenOnState = isScreenOn;
         }
 
-        if (previousSonarPingEnabledState != isSonarPingEnabled)
+        if (sonarPingController != null)
         {
-            if (sonarPingController != null)
+            if (previousSonarPingEnabledState != isSonarPingEnabled)
             {
                 sonarPingController.PingEnabled = isSonarPingEnabled;
+            }
+            else if (sonarPingController.PingEnabled != isSonarPingEnabled)
+            {
+                isSonarPingEnabled = sonarPingController.PingEnabled;
             }
             previousSonarPingEnabledState = isSonarPingEnabled;
         }
@@ -227,10 +232,38 @@ public class SonarMinigameController : MonoBehaviour
         return isScreenOn;
     }
 
+    public bool SonarIsActive()
+    {
+        return isSonarPingEnabled;
+    }
+
+    public bool MiniGameIsActive()
+    {
+        return isMiniGameActive;
+    }
+
     public void ToggleInputReady(bool value)
     {
         isReadyForInput = value;
         sonarScreen.SetActive(value);
         boatScreen.SetActive(value);
+    }
+
+    public void StartMinigame()
+    {
+        isMiniGameActive = true;
+        if (boatController != null)
+        {
+            boatController.SetDriftForwardEnabled(true);
+        }
+    }
+
+    public void EndMinigame()
+    {
+        isMiniGameActive = false;
+        if (boatController != null)
+        {
+            boatController.SetDriftForwardEnabled(false);
+        }
     }
 }
