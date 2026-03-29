@@ -24,10 +24,10 @@ MonoBehaviour:
     m_Value: 128
   ditherStrength:
     m_OverrideState: 1
-    m_Value: 0.4
+    m_Value: 0.3
   ditherScale:
     m_OverrideState: 1
-    m_Value: 1.5
+    m_Value: 2
   scanlineIntensity:
     m_OverrideState: 0
     m_Value: 0

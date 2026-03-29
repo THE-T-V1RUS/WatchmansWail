@@ -2319,6 +2319,47 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 351d62854de7508409172edc4cb12f3c, type: 3}
   m_PrefabInstance: {fileID: 453946336}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &115452500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115452497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea9e8a80b93ca3342abb2bb18ef1e9e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::npcController
+  npcAnimator: {fileID: 0}
+  destinationPoint: {fileID: 0}
+  moveSpeed: 1
+  rotationSpeed: 5
+  stoppingDistance: 0.15
+  notifyDialogueOnArrival: 1
+  footstepClips:
+  - {fileID: 8300000, guid: d624cf08b9971544a9ecaa25c19cc8b0, type: 3}
+  - {fileID: 8300000, guid: 59d2e744285cd0d4398a2c1fb5ad119c, type: 3}
+  - {fileID: 8300000, guid: c663130e52c69eb44820f04e06055b64, type: 3}
+  - {fileID: 8300000, guid: be55a8ad90e293e45be5f1bc9a3234e1, type: 3}
+  - {fileID: 8300000, guid: dc2d3839af151fe45b70fdf02825f9a6, type: 3}
+  - {fileID: 8300000, guid: d57dce72919fa07418f63349d358f7bb, type: 3}
+  - {fileID: 8300000, guid: 8b7c31cc8264a4c408b314f669ad4645, type: 3}
+  - {fileID: 8300000, guid: 27aa85cdc457ce5489cb4288cc4bcab6, type: 3}
+  - {fileID: 8300000, guid: e853a67d133bbac4b96fa586a6d6de90, type: 3}
+  - {fileID: 8300000, guid: 28e1971a00aa6084bb3ca65d9aaebe7f, type: 3}
+  - {fileID: 8300000, guid: 0612d838121e77d4fa3cac33fa47bcec, type: 3}
+  - {fileID: 8300000, guid: 9c3522519585dfd45b5dcbd652b8dec0, type: 3}
+  - {fileID: 8300000, guid: ba2a6d1f9549b2f4bb5f7297f451bac1, type: 3}
+  - {fileID: 8300000, guid: 4e9689c7c2570c7439b3bb5e4751541e, type: 3}
+  - {fileID: 8300000, guid: 177cf958184d537489d004039385db47, type: 3}
+  - {fileID: 8300000, guid: 51f74a59b31678b43a2162fec40be482, type: 3}
+  - {fileID: 8300000, guid: 9dbe98ff43f397448aba2cd00b1131f9, type: 3}
+  - {fileID: 8300000, guid: a8991fb0faf310640a1b80a705a8ae07, type: 3}
+  - {fileID: 8300000, guid: 02c778d6f58e39f4eb53862e3fea574b, type: 3}
+  - {fileID: 8300000, guid: 471f9c92a1b9bb048a40adaf147aac8d, type: 3}
+  - {fileID: 8300000, guid: b02b3f57c1644a04aa1acc4d499f3944, type: 3}
+  - {fileID: 8300000, guid: 7cf32e525f7a88a4c9baad527ae6f975, type: 3}
 --- !u!1001 &118472589
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4550,6 +4591,101 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 261494842}
   m_Mesh: {fileID: -9125126608681882378, guid: ebda710a6bf744143873cc2f541cc574, type: 3}
+--- !u!1 &265003464
+GameObject:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 265003465}
+  - component: {fileID: 265003468}
+  - component: {fileID: 265003467}
+  - component: {fileID: 265003466}
+  m_Layer: 0
+  m_Name: cm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &265003465
+Transform:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265003464}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 906044623}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &265003466
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265003464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa7155796051b734daa718462081dc5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Cinemachine::Cinemachine.CinemachineTransposer
+  m_BindingMode: 1
+  m_FollowOffset: {x: 0, y: 0, z: -10}
+  m_XDamping: 1
+  m_YDamping: 1
+  m_ZDamping: 1
+  m_AngularDampingMode: 0
+  m_PitchDamping: 0
+  m_YawDamping: 0
+  m_RollDamping: 0
+  m_AngularDamping: 0
+--- !u!114 &265003467
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265003464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4044717213e31446939f7bd49c896ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Cinemachine::Cinemachine.CinemachineComposer
+  m_TrackedObjectOffset: {x: 0, y: 0, z: 0}
+  m_LookaheadTime: 0
+  m_LookaheadSmoothing: 0
+  m_LookaheadIgnoreY: 0
+  m_HorizontalDamping: 0.5
+  m_VerticalDamping: 0.5
+  m_ScreenX: 0.5
+  m_ScreenY: 0.5
+  m_DeadZoneWidth: 0
+  m_DeadZoneHeight: 0
+  m_SoftZoneWidth: 0.8
+  m_SoftZoneHeight: 0.8
+  m_BiasX: 0
+  m_BiasY: 0
+  m_CenterOnActivate: 1
+--- !u!114 &265003468
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265003464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Cinemachine::Cinemachine.CinemachinePipeline
 --- !u!1001 &271265846
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7964,7 +8100,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 351d62854de7508409172edc4cb12f3c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1852576806548013000, guid: 351d62854de7508409172edc4cb12f3c, type: 3}
       propertyPath: m_LocalRotation.x
@@ -8000,7 +8136,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 351d62854de7508409172edc4cb12f3c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 415192895}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 351d62854de7508409172edc4cb12f3c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 115452500}
   m_SourcePrefab: {fileID: 100100000, guid: 351d62854de7508409172edc4cb12f3c, type: 3}
 --- !u!1 &461634257
 GameObject:
@@ -8821,7 +8960,7 @@ MonoBehaviour:
           m_CallState: 2
     waitForEventComplete: 1
     waitDuration: 2
-  - isExpanded: 0
+  - isExpanded: 1
     stepName: Visitor Dialogue
     stepType: 0
     textLines:
@@ -8830,6 +8969,113 @@ MonoBehaviour:
     - <color=#D4AF37>How is the SS Cadence going to navigate the waters without you?
     - <color=white>It's not here yet.
     - I need rest to perform.
+    onEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1230063848}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 4
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    waitForEventComplete: 1
+    waitDuration: 2
+  - isExpanded: 1
+    stepName: Visitor moves to organ
+    stepType: 1
+    textLines:
+    - <color=#D4AF37>Sleeping on the job?
+    - <color=white>What?
+    - <color=#D4AF37>How is the SS Cadence going to navigate the waters without you?
+    - <color=white>It's not here yet.
+    - I need rest to perform.
+    - <color=#D4AF37>Is the sonar monitor still giving you problems?
+    - <color=white>No.
+    - <color=#D4AF37>How did you fix it?
+    - <color=white>The circuit board was corroded.
+    - The last crate of supplies had some alcohol.
+    - <color=#D4AF37>What about the pipe organ?
+    - <color=#D4AF37>You haven't performed in a while.
+    - <color=white>It's fine.
+    - <color=#D4AF37>And you?
+    - <color=white>Hungry. Exhausted.
+    - <color=#D4AF37>Are you completely out of supplies?
+    - <color=white>I'll help the SS Cadence navigate through the rocks and they'll
+      drop supplies for me.
+    - The ships always do.
+    - <color=#D4AF37>You had a rough time with the last ship.
+    - <color=#D4AF37>It hit quite a few rocks.
+    - <color=white>But they made it through.
+    - <color=#D4AF37>Yes.
+    - <color=white>And I got my supplies.
+    - <color=#D4AF37>Barely.
+    - <color=white>Well the monitor is fixed now, so...
+    - <color=#D4AF37>Elara.
+    - <color=white>Yeah?
+    - <color=#D4AF37>They're here.
+    onEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 115452500}
+          m_TargetAssemblyTypeName: npcController, Assembly-CSharp
+          m_MethodName: SetDestination
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 901512952}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1187132136}
+          m_TargetAssemblyTypeName: CameraMover, Assembly-CSharp
+          m_MethodName: setFollowTarget
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 906044623}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1495024508}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: PlaySfxSimple
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 385eb78b7a807cf4fb025c4250e59b13, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 115452500}
+          m_TargetAssemblyTypeName: npcController, Assembly-CSharp
+          m_MethodName: MoveToDestination
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    waitForEventComplete: 1
+    waitDuration: 1
+  - isExpanded: 1
+    stepName: Visitor Dialogue
+    stepType: 0
+    textLines:
     - <color=#D4AF37>Is the sonar monitor still giving you problems?
     - <color=white>No.
     - <color=#D4AF37>How did you fix it?
@@ -9348,7 +9594,7 @@ MonoBehaviour:
           m_CallState: 2
     waitForEventComplete: 0
     waitDuration: 2
-  - isExpanded: 1
+  - isExpanded: 0
     stepName: Turn off Night1_Intro Interaction and enable GuideTheShip interaction
     stepType: 1
     textLines: []
@@ -10803,6 +11049,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: cf9ee4e98614c3148ae3ad0a34f90772, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1782664437}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: cf9ee4e98614c3148ae3ad0a34f90772, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 906044623}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: cf9ee4e98614c3148ae3ad0a34f90772, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1230063849}
@@ -16375,6 +16624,37 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 6368897953463325042, guid: ebda710a6bf744143873cc2f541cc574, type: 3}
+--- !u!1 &901512951
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 901512952}
+  m_Layer: 0
+  m_Name: Point_LookAtMonitor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &901512952
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 901512951}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.0013257843, z: -0, w: 0.99999917}
+  m_LocalPosition: {x: -70.572, y: 28.186098, z: 567.459}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 932063558}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &902684383
 GameObject:
   m_ObjectHideFlags: 0
@@ -16488,6 +16768,85 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 902684383}
   m_Mesh: {fileID: 5250719064900327662, guid: 98ee3f72e65169145869dac38256d5c6, type: 3}
+--- !u!1 &906044622
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 906044623}
+  - component: {fileID: 906044624}
+  m_Layer: 0
+  m_Name: Camera_Sit_PipeOrganFocus
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &906044623
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906044622}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.012267071, y: -0.92667097, z: -0.03062956, w: 0.3744226}
+  m_LocalPosition: {x: -0.33361548, y: 2.4504344, z: 0.3110072}
+  m_LocalScale: {x: 1.8238064, y: 1.823807, z: 1.8238059}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 265003465}
+  m_Father: {fileID: 1133909781}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &906044624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906044622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Cinemachine::Cinemachine.CinemachineVirtualCamera
+  m_ExcludedPropertiesInInspector:
+  - m_Script
+  m_LockStageInInspector: 
+  m_StreamingVersion: 20170927
+  m_Priority: 100
+  m_StandbyUpdate: 2
+  m_LookAt: {fileID: 0}
+  m_Follow: {fileID: 0}
+  m_Lens:
+    FieldOfView: 60.000004
+    OrthographicSize: 10
+    NearClipPlane: 0.01
+    FarClipPlane: 200
+    Dutch: 0
+    ModeOverride: 0
+    LensShift: {x: 0, y: 0}
+    GateFit: 2
+    FocusDistance: 10
+    m_SensorSize: {x: 1, y: 1}
+    Iso: 200
+    ShutterSpeed: 0.005
+    Aperture: 16
+    BladeCount: 5
+    Curvature: {x: 2, y: 11}
+    BarrelClipping: 0.25
+    Anamorphism: 0
+  m_Transitions:
+    m_BlendHint: 0
+    m_InheritPosition: 0
+    m_OnCameraLive:
+      m_PersistentCalls:
+        m_Calls: []
+  m_LegacyBlendHint: 0
+  m_ComponentOwner: {fileID: 265003465}
 --- !u!1001 &908964564
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17394,6 +17753,7 @@ Transform:
   m_Children:
   - {fileID: 1436644418}
   - {fileID: 115452498}
+  - {fileID: 901512952}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &950032817
