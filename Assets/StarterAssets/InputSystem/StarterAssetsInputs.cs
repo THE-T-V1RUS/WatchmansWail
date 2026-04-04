@@ -12,9 +12,9 @@ namespace StarterAssets
 		public Vector2 look;
 		public bool jump;
 		public bool sprint;
+		public bool aim;
 		public bool interact;
 		public bool interactPressed;
-		private bool _interactLast;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -47,6 +47,10 @@ namespace StarterAssets
 			SprintInput(value.isPressed);
 		}
 
+		public void OnAim(InputValue value)
+		{
+			AimInput(value.isPressed);
+		}
 
 		public void OnInteract(InputValue value)
 		{
@@ -75,14 +79,23 @@ namespace StarterAssets
 			sprint = newSprintState;
 		}
 
+		public void AimInput(bool newAimState)
+		{
+			aim = newAimState;
+		}
+
 		public void InteractInput(bool newInteractState)
 		{
-			interact = newInteractState;
-			if (newInteractState && !_interactLast)
+			if (newInteractState)
 			{
+				interact = true;
 				interactPressed = true;
 			}
-			_interactLast = newInteractState;
+		}
+
+		private void LateUpdate()
+		{
+			interact = false;
 		}
 
 		public bool ConsumeInteractPressed()

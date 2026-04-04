@@ -1,5 +1,6 @@
 using StarterAssets;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class GameManager : MonoBehaviour
     public bool isDebugMode = false;
 
     public static GameManager Instance { get; private set; }
+
+    public DialogueTrigger tutorialSonarDialogueTrigger;
 
     private void Awake()
     {
@@ -43,6 +46,18 @@ public class GameManager : MonoBehaviour
             playerController.canMove = true;
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
+        }
+    }
+
+    void Update()
+    {
+        if (isDebugMode)
+        {
+            if(Keyboard.current[Key.Digit1].wasPressedThisFrame)
+            {
+                //Set up scene for tutorial sonar minigame
+                tutorialSonarDialogueTrigger.TriggerDialogue();
+            }
         }
     }
 

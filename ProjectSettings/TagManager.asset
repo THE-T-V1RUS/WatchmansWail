@@ -9,6 +9,8 @@ TagManager:
   - Rock
   - Concrete
   - Interact
+  - Weapon
+  - Supplies
   layers:
   - Default
   - TransparentFX
@@ -22,7 +24,7 @@ TagManager:
   - Interactable
   - Sonar
   - MiniGame
-  - 
+  - Weapon
   - 
   - 
   - 

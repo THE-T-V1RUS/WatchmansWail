@@ -56,11 +56,12 @@ public class BoatController : MonoBehaviour
     private float currentTurnRate = 0f;
     private float steeringInput = 0f;
     private float currentSpeed = 0f;
-    private float currentHealth;
+    private float currentHealth;    
     private Rigidbody rb;
-    private StarterAssetsInputs _input;
+    [SerializeField] private StarterAssetsInputs _input;
 
     public float DistanceToSafeZone { get; private set; }
+    public bool HasReachedEnd { get; private set; }
     public bool IsDriftForwardEnabled => driftForwardEnabled;
     private bool isDead = false;
     private float fadeTimer = 0f;
@@ -83,7 +84,6 @@ public class BoatController : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        _input = FindObjectOfType<StarterAssetsInputs>();
         if (rb != null)
         {
             rb.interpolation = RigidbodyInterpolation.Interpolate;
@@ -364,6 +364,7 @@ public class BoatController : MonoBehaviour
     {
         float currentZ = rb != null ? rb.position.z : transform.position.z;
         DistanceToSafeZone = Mathf.Max(0f, targetZPosition - currentZ);
+        HasReachedEnd = currentZ >= targetZPosition;
     }
 
     public void ResetBoatState()
@@ -376,6 +377,7 @@ public class BoatController : MonoBehaviour
         steeringInput = 0f;
         currentSpeed = 0f;
         driftForwardEnabled = false;
+        HasReachedEnd = false;
 
         transform.position = initialPosition;
         transform.rotation = initialRotation;
@@ -448,5 +450,10 @@ public class BoatController : MonoBehaviour
 
         shakeTarget.localPosition = shakeBaseLocalPos;
         shakeRoutine = null;
+    }
+
+    public bool boatIsDead()
+    {
+        return isDead;
     }
 }

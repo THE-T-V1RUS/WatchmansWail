@@ -87,6 +87,12 @@ namespace StarterAssets
 		[SerializeField] private CanvasGroup playerUICanvasGroup;
 		private Coroutine uiFadeRoutine;
 
+		[Header("Weapon")]
+		public GunController gunController;
+#if ENABLE_INPUT_SYSTEM
+		[SerializeField] private InputActionReference shootAction;
+#endif
+
 		// cinemachine
 		private float _cinemachineTargetPitch;
 
@@ -234,6 +240,7 @@ namespace StarterAssets
 			GroundedCheck();
 			Move();
 			UpdateFootsteps();
+			UseGun();
 		}
 
 		private void LateUpdate()
@@ -558,6 +565,36 @@ namespace StarterAssets
 			}
 			canvasGroup.alpha = endAlpha;
 			uiFadeRoutine = null;
+		}
+
+		private void UseGun()
+		{
+			if (gunController == null)
+			{
+				Debug.LogWarning("GunController reference is missing. Cannot use gun.");
+				return;
+			}
+
+			if (gunController.canUseGun)
+			{
+				if(_input.aim)
+				{
+					gunController.EquipGun();
+				}
+				else
+				{
+					gunController.UnequipGun();
+				}
+
+				if (gunController.IsEquipped && shootAction != null && shootAction.action.WasPressedThisFrame() && gunController.canShoot)
+				{
+					gunController.ShootGun();
+				}
+			}
+			else
+			{
+				gunController.UnequipGun();
+			}
 		}
 	}
 }

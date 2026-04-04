@@ -1,4 +1,7 @@
 using System;
+using System.Collections;
+using StarterAssets;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SonarMinigameController : MonoBehaviour
@@ -32,6 +35,11 @@ public class SonarMinigameController : MonoBehaviour
 
 
     [SerializeField] private GameObject sonarScreen, boatScreen;
+
+    [SerializeField] private AudioClip steerShipMusic, stingSuccess, stingFailure;
+    [SerializeField] private CameraMover playerCameraMover;
+
+    public DialogueTrigger BadResultsDialogueTrigger, GoodResultsDialogueTrigger;
 
     private void Awake()
     {
@@ -68,6 +76,24 @@ public class SonarMinigameController : MonoBehaviour
                 isSonarPingEnabled = sonarPingController.PingEnabled;
             }
             previousSonarPingEnabledState = isSonarPingEnabled;
+        }
+
+        if (isMiniGameActive)
+        {
+            if (boatController.HasReachedEnd || boatController.boatIsDead())
+            {
+                if(boatController.boatIsDead())
+                {
+                    AudioManager.Instance.PlaySfx(stingFailure);
+                }
+                else
+                {
+                    AudioManager.Instance.PlaySfx(stingSuccess);
+                }
+
+                isMiniGameActive = false;
+                EndMinigame();
+            }
         }
     }
 
@@ -251,19 +277,54 @@ public class SonarMinigameController : MonoBehaviour
 
     public void StartMinigame()
     {
-        isMiniGameActive = true;
         if (boatController != null)
         {
+            isMiniGameActive = true;
             boatController.SetDriftForwardEnabled(true);
+            AudioManager.Instance.ChangeMusicClip(steerShipMusic);
+            AudioManager.Instance.FadeInMusic(1);
         }
+        else
+        {
+            Debug.LogWarning("SonarMinigameController: Cannot start minigame because BoatController reference is missing.");
+        }
+    }
+
+    public void SetGoodResultsDialogueTrigger(DialogueTrigger trigger)
+    {
+        GoodResultsDialogueTrigger = trigger;
+    }
+
+    public void SetBadResultsDialogueTrigger(DialogueTrigger trigger)
+    {
+        BadResultsDialogueTrigger = trigger;
     }
 
     public void EndMinigame()
     {
-        isMiniGameActive = false;
-        if (boatController != null)
+        isReadyForInput = false;
+        sonarScreen.SetActive(false);
+        boatScreen.SetActive(false);
+        boatController.SetDriftForwardEnabled(false);
+        AudioManager.Instance.FadeOutMusic(1);
+        StartCoroutine(EndMinigameCoroutine());
+    }
+
+    IEnumerator EndMinigameCoroutine()
+    {
+        // Slight delay before returning camera to player...
+        yield return new WaitForSeconds(1f);
+        playerCameraMover.ReturnToPlayer();
+
+        if (boatController.boatIsDead())
         {
-            boatController.SetDriftForwardEnabled(false);
+            BadResultsDialogueTrigger.TriggerDialogue();
         }
+        else
+        {
+            GoodResultsDialogueTrigger.TriggerDialogue();
+        }
+
+        boatController.ResetBoatState();
     }
 }
